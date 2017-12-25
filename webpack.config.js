@@ -5,7 +5,7 @@ var path = require('path');
 module.exports = {
   context: path.join(__dirname, "src"),
   devtool: debug ? "inline-sourcemap" : false,
-  entry: "./js/main.js",
+  entry: "./app-client.js",
   module: {
     loaders: [
       {
@@ -19,6 +19,9 @@ module.exports = {
       }
     ]
   },
+  devServer: {
+		historyApiFallback: true,
+	},
   output: {
     path: __dirname + "/src/",
     filename: "bundle.min.js"
