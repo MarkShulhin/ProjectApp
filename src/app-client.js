@@ -6,9 +6,9 @@ import App from './components/App';
 
 
 const Routes = (
-    <BrowserRouter>
-        <App/>
-    </BrowserRouter>
+	<BrowserRouter>
+		<App/>
+	</BrowserRouter>
 );
 
 const app = document.getElementById('app');
