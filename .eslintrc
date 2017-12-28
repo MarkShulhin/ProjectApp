@@ -10,7 +10,7 @@
 		"document": false
 	},
 	"rules": {
-		"linebreak-style": ["error", "unix"],
+		"linebreak-style": ["error", "windows"],
 		"indent": [2, "tab"],
 		"max-len": [1, 100, 2,
 			{

@@ -11,5 +11,5 @@ const Routes = (
 	</BrowserRouter>
 );
 
-const app = document.getElementById('app');
-render(Routes, app);
+const main = document.getElementById('app');
+render(Routes, main);

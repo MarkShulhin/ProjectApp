@@ -63,7 +63,6 @@ module.exports = {
     filename: "bundle.min.js"
   },
   plugins: debug ? [] : [
-    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
   ],

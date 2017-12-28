@@ -1,2 +1,146 @@
 @import url('../../node_modules/font-awesome/css/font-awesome.min.css');
 
+
+header {
+    padding: 0;
+    margin: 0;
+    width:100%;
+    height: 85px;
+    background: #f2825b;
+    background: -moz-linear-gradient(top, #f2825b 0%, #e55b2b 50%, #f07146 100%);
+    background: -webkit-linear-gradient(top, #f2825b 0%,#e55b2b 50%,#f07146 100%);
+    background: linear-gradient(to bottom, #f2825b 0%,#e55b2b 50%,#f07146 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2825b', endColorstr='#f07146',GradientType=0 );
+    display: flex;
+    justify-content: space-around;
+}
+
+.logo {
+    margin-top: -7px;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+}
+
+.menu {
+    width:600px;
+}
+
+/* Flex Nav Bar */
+.flex-nav {
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-item {
+    flex:1;
+    text-align: center;
+    color: inherit;
+    transition: all .2s ease;
+}
+
+.nav-item:not(:first-child) {
+    border-left: 2px solid #ecf0f1;
+}
+
+.nav-item:hover {
+    background: #f07146;
+    flex:1.1;
+}
+
+.nav-item a {
+    display: block;
+    padding: 20px 0;
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Hamburger Icon */
+
+.menu .hamburger {
+    height: 36px;
+    width: 36px;
+    margin: 5px;
+    display: none;
+    border: 3px solid #ecf0f1;
+    border-radius: 5px;
+}
+
+.menu .hamburger i, 
+.menu .hamburger i:before, 
+.menu .hamburger i:after {
+    cursor: pointer;
+    content: '';
+    width: 25px;
+    height: 4px;
+    background: #ecf0f1;
+    border-radius: 4px;
+    transition: transform .2s ease;
+}
+
+.menu .hamburger i {
+    display: block;
+    position: relative;
+    top: 16px;
+    left: 6px;
+}
+
+.menu .hamburger i:before {
+    position: absolute;
+    top: -8px;
+}
+
+.menu .hamburger i:after {
+    position: absolute;
+    top: -8px;
+}
+
+/* styles on hamburger active */
+
+.menu.active .hamburger {
+    border-radius: 50%;
+}
+
+.menu.active .hamburger i {
+    background: transparent;
+}
+
+.menu.active .hamburger i:before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.menu.active .hamburger i:after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+/* media queries */
+@media screen and (max-width: 600px) {
+    .flex-nav {
+        flex-direction: column;
+    }
+
+    .flex-nav .nav-item {
+        display: none;
+        height: 0;
+        transition: height 1s ease;
+        color: transparent;
+    }
+
+    .flex-nav > .nav-item:not(:first-child) {
+        border-left: none;
+    }
+
+    .menu .hamburger {
+        display: inline-block;
+    }
+    
+    .menu.active .flex-nav .nav-item {
+        display: block;
+        height: initial;
+        color: inherit;
+    }
+}
