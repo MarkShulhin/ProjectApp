@@ -4,7 +4,7 @@
   "description": "project application built with React.",
   "main": "webpack.config.js",
   "scripts": {
-    "dev": "webpack-dev-server --content-base src --inline --hot --host 192.168.0.103 --port 8080 --open",
+    "dev": "webpack-dev-server --content-base src --inline --hot --host 192.168.0.103 --port 8080 --open ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
