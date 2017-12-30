@@ -1,5 +1,5 @@
 @import url('../../node_modules/font-awesome/css/font-awesome.min.css');
-
+@import url('https://fonts.googleapis.com/css?family=Bitter');
 
 header {
     padding: 0;
@@ -26,6 +26,8 @@ header {
 
 .menu {
     width:600px;
+    color: #b8b7ad;
+    font-family: 'Bitter', serif;
 }
 
 /* Flex Nav Bar */
@@ -46,7 +48,7 @@ header {
 }
 
 .nav-item:hover {
-    background: #f07146;
+    color: #fff;
     flex:1.1;
 }
 
@@ -63,6 +65,7 @@ header {
     height: 36px;
     width: 36px;
     margin: 5px;
+    margin-top: 21.5px;
     display: none;
     border: 3px solid #ecf0f1;
     border-radius: 5px;
@@ -94,7 +97,7 @@ header {
 
 .menu .hamburger i:after {
     position: absolute;
-    top: -8px;
+    top: 8px;
 }
 
 /* styles on hamburger active */
@@ -119,8 +122,13 @@ header {
 
 /* media queries */
 @media screen and (max-width: 600px) {
+
+    header {
+        flex-direction: row-reverse;
+    }
     .flex-nav {
         flex-direction: column;
+        width: 100%;
     }
 
     .flex-nav .nav-item {
@@ -142,5 +150,10 @@ header {
         display: block;
         height: initial;
         color: inherit;
+        background-color: rgba(44, 44, 44, 0.8);
+    }
+
+    .menu.active .flex-nav .nav-item:hover {
+       color: #e55b2b;
     }
 }
