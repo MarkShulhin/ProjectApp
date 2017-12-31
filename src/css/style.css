@@ -152,6 +152,7 @@ header {
         height: initial;
         color: inherit;
         background-color: rgba(51, 51, 51, 0.9);
+        z-index: 1;
     }
 
     .menu.active .flex-nav .nav-item:hover {
