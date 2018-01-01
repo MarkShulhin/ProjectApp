@@ -1,0 +1,92 @@
+
+.slider {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  height: 350px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.slider .slider-wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.slider .slider-wrapper .slide {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+.slider-right-arrow, .slider-left-arrow {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f9f9f9;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform ease-in 0.1s;
+}
+.slider-right-arrow:hover, .slider-left-arrow:hover {
+  transition: transform ease-in 0.1s;
+  transform: scale(1.1);
+}
+.slider-right-arrow {
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  z-index: 999;
+  color: #fff;
+}
+.slider-right-arrow img {
+  transform: translate(2px, 0);
+}
+.slider-right-arrow img:focus {
+  outline: 0;
+}
+.slider-left-arrow {
+  position: absolute;
+  top: 50%;
+  left: 25px;
+  z-index: 999;
+  color: #fff;
+}
+.slider-left-arrow img {
+  transform: translate(-2px, 0);
+}
+.slider-left-arrow img:focus {
+  outline: 0;
+}
+.dots-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 9999;
+  padding: 5px 0;
+}
+.dots-container .dot {
+  background: #222;
+  display: inline-block;
+  padding: 10px;
+  margin-right: 5px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.dots-container .active {
+  background: #fff;
+}
+.autoplay {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 10px;
+  background: #ddd;
+  color: #333;
+  font-size: 15px;
+}
+.autoplay p {
+  margin: 0;
+}

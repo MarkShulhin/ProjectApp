@@ -4,7 +4,7 @@
   "description": "project application built with React.",
   "main": "webpack.config.js",
   "scripts": {
-    "dev": "webpack-dev-server --content-base src --inline --hot --host 192.168.0.100 --port 8080 --open ",
+    "dev": "webpack-dev-server --content-base src --inline --hot --host 192.168.0.102 --port 8080 --open ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +20,7 @@
   "dependencies": {
     "axios": "^0.17.1",
     "normalize.css": "^7.0.0",
+    "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2"

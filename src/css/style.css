@@ -121,6 +121,46 @@ header {
     transform: rotate(-45deg);
 }
 
+/* 404 page */
+.notFound {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    flex-direction: column;
+
+    font-family: 'Bitter', serif;
+    background: #f2825b;
+    color:#fff;
+}
+
+.nf-title {
+    font-size: 4em;
+}
+
+.nf-subtitle {
+    font-size: 1.5em;
+}
+
+.notFound-link {
+}
+
 /* media queries */
 @media screen and (max-width: 600px) {
 
@@ -157,5 +197,14 @@ header {
 
     .menu.active .flex-nav .nav-item:hover {
        color: #e55b2b;
+    }
+
+    /*404 page */
+    .nf-title {
+        font-size: 2em;
+    }
+    
+    .nf-subtitle {
+        font-size: 0.8em;
     }
 }
