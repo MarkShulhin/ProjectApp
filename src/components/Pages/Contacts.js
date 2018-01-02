@@ -16,7 +16,7 @@ export default class Contacts extends React.Component {
 
 					<ContactsForm/>
 
-					<iframe class="map" src="https://www.google.com/maps/embed?pb=!4v1514646752840!6m8!1m7!1sCAoSLEFGMVFpcE56d3NsMVNqM1JHNXNFNXJsZFVpNlpLczRMQldfc3lueXhwRDFO!2m2!1d53.1081771!2d-6.2751826!3f78.21248768929762!4f-10.230164826410387!5f0.4000000000000002" frameborder="0" allowfullscreen></iframe>
+					<iframe class="map" src="https://www.google.com/maps/embed?pb=!4v1514646752840!6m8!1m7!1sCAoSLEFGMVFpcE56d3NsMVNqM1JHNXNFNXJsZFVpNlpLczRMQldfc3lueXhwRDFO!2m2!1d53.1081771!2d-6.2751826!3f78.21248768929762!4f-10.230164826410387!5f0.4000000000000002" frameBorder="0" allowFullScreen></iframe>
 				</main>
 			</div>
 		);

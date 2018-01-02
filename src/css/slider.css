@@ -36,7 +36,7 @@
   position: absolute;
   top: 50%;
   right: 25px;
-  z-index: 999;
+  z-index: 1;
   color: #fff;
 }
 .slider-right-arrow img {
@@ -49,7 +49,7 @@
   position: absolute;
   top: 50%;
   left: 25px;
-  z-index: 999;
+  z-index: 1;
   color: #fff;
 }
 .slider-left-arrow img {

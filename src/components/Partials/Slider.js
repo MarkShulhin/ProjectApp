@@ -62,7 +62,7 @@ export default class Slider extends React.Component {
 		if (autoplay && prevState.autoplay !== autoplay) {
 			const x = window.setInterval(() => {
 				this.goToNextSlide();
-			}, 2500);
+			}, 5000);
 
 			this.setState({ interval: x });
 		} else if (!autoplay && prevState.autoplay !== autoplay) {
