@@ -1,8 +1,11 @@
 import { combineReducers } from 'redux';
-import { items, itemsHasErrored, itemsIsLoading } from './items';
 
-export default combineReducers({
-	items,
-	itemsHasErrored,
-	itemsIsLoading,
+//	Reducers
+import postsReducer from './posts';
+
+//	Combine reducers
+const reducers = combineReducers({
+	postsState: postsReducer,
 });
+
+export default reducers;

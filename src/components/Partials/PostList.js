@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { itemsFetchData } from '../../actions/items';
+import { postsFetchData } from '../../actions/posts';
 
 class PostList extends React.Component {
 	componentDidMount() {
@@ -10,7 +10,7 @@ class PostList extends React.Component {
 
 	render() {
 		if (this.props.hasErrored) {
-			return <p>Sorry! There was an error loading the items</p>;
+			return <p>Sorry! There was an error loading the posts</p>;
 		}
 
 		if (this.props.isLoading) {
@@ -19,9 +19,9 @@ class PostList extends React.Component {
 
 		return (
 			<ul>
-				{this.props.items.map(item => (
-					<li key={item.id}>
-						{item.label}
+				{this.props.posts.map(post => (
+					<li key={post.id}>
+						{post.label}
 					</li>
 				))}
 			</ul>
@@ -33,17 +33,17 @@ PostList.propTypes = {
 	fetchData: PropTypes.func,
 	hasErrored: PropTypes.bool,
 	isLoading: PropTypes.bool,
-	items: PropTypes.arrayOf(PropTypes.object),
+	posts: PropTypes.arrayOf(PropTypes.object),
 };
 
 const mapStateToProps = state => ({
-	items: state.items,
-	hasErrored: state.itemsHasErrored,
-	isLoading: state.itemsIsLoading,
+	posts: state.postsState.posts,
+	hasErrored: state.postsState.postsHasErrored,
+	isLoading: state.postsState.postsIsLoading,
 });
 
 const mapDispatchToProps = dispatch => ({
-	fetchData: url => dispatch(itemsFetchData(url)),
+	fetchData: url => dispatch(postsFetchData(url)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostList);
