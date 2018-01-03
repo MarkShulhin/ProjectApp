@@ -1,48 +1,25 @@
 import React from 'react';
-import axios from 'axios';
+import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
+import { itemsFetchData } from '../../actions/items';
 
-export default class PostList extends React.Component {
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			items: [],
-		};
-	}
-
-	fetchData(url) {
-		this.setState({ isLoading: true });
-
-		axios.get(url)
-			.then((response) => {
-				if (response.status !== 200) {
-					throw Error(response.statusText);
-				}
-
-				this.setState({ isLoading: false });
-
-				return response.data;
-			})
-			.then(items => this.setState({ items }))
-			.catch(() => this.setState({ hasErrored: true }));
-	}
-
+class PostList extends React.Component {
 	componentDidMount() {
-		this.fetchData('assets/posts.json');
+		this.props.fetchData('assets/posts.json');
 	}
 
 	render() {
-		if (this.state.hasErrored) {
+		if (this.props.hasErrored) {
 			return <p>Sorry! There was an error loading the items</p>;
 		}
 
-		if (this.state.isLoading) {
+		if (this.props.isLoading) {
 			return <p>Loading…</p>;
 		}
 
 		return (
 			<ul>
-				{this.state.items.map(item => (
+				{this.props.items.map(item => (
 					<li key={item.id}>
 						{item.label}
 					</li>
@@ -51,3 +28,22 @@ export default class PostList extends React.Component {
 		);
 	}
 }
+
+PostList.propTypes = {
+	fetchData: PropTypes.func,
+	hasErrored: PropTypes.bool,
+	isLoading: PropTypes.bool,
+	items: PropTypes.arrayOf(PropTypes.object),
+};
+
+const mapStateToProps = state => ({
+	items: state.items,
+	hasErrored: state.itemsHasErrored,
+	isLoading: state.itemsIsLoading,
+});
+
+const mapDispatchToProps = dispatch => ({
+	fetchData: url => dispatch(itemsFetchData(url)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(PostList);
