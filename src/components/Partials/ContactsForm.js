@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export default class ContactsForm extends React.Component {
+export default class ContactsForm extends Component {
 	render() {
 		return (
 			<form class="contact-form">

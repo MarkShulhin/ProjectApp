@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 import Slide from './Slide';
 import Dots from './Dots';
@@ -7,7 +7,7 @@ import SliderLeftArrow from './SliderLeftArrow';
 import SliderRightArrow from './SliderRightArrow';
 import '../../css/slider.css';
 
-export default class Slider extends React.Component {
+export default class Slider extends Component {
 	constructor(props) {
 		super(props);
 

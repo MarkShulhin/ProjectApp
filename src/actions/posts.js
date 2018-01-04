@@ -37,6 +37,9 @@ export function postsFetchData(url) {
 				return response.data;
 			})
 			.then(posts => dispatch(postsFetchDataSuccess(posts)))
-			.catch(() => dispatch(postsHasErrored(true)));
+			.catch(() => {
+				dispatch(postsIsLoading(false));
+				dispatch(postsHasErrored(true));
+			});
 	};
 }

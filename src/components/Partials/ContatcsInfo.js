@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export default class ContactsInfo extends React.Component {
+export default class ContactsInfo extends Component {
 	render() {
 		return (
 			<aside class="info">

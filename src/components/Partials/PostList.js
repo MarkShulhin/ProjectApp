@@ -1,30 +1,39 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { postsFetchData } from '../../actions/posts';
+import PostPreview from './PostPreview';
+import '../../css/loader.css';
+import '../../css/posts.css';
 
-class PostList extends React.Component {
+class PostList extends Component {
 	componentDidMount() {
 		this.props.fetchData('assets/posts.json');
 	}
 
 	render() {
-		if (this.props.hasErrored) {
-			return <p>Sorry! There was an error loading the posts</p>;
-		}
-
-		if (this.props.isLoading) {
-			return <p>Loading…</p>;
-		}
-
 		return (
-			<ul>
-				{this.props.posts.map(post => (
-					<li key={post.id}>
-						{post.label}
-					</li>
-				))}
-			</ul>
+			<main class="main-posts">
+				{
+					this.props.hasErrored ?
+						<p>Sorry! There was an error loading the posts</p>
+						: null}
+				{
+					this.props.isLoading ?
+						<div class="sk-folding-cube">
+							<div class="sk-cube1 sk-cube"></div>
+							<div class="sk-cube2 sk-cube"></div>
+							<div class="sk-cube4 sk-cube"></div>
+							<div class="sk-cube3 sk-cube"></div>
+						</div>
+						: null
+				}
+				<section class='posts'>
+					{this.props.posts.map(post => (
+						<PostPreview post={post} />
+					))}
+				</section>
+			</main>
 		);
 	}
 }
@@ -38,8 +47,8 @@ PostList.propTypes = {
 
 const mapStateToProps = state => ({
 	posts: state.postsState.posts,
-	hasErrored: state.postsState.postsHasErrored,
-	isLoading: state.postsState.postsIsLoading,
+	hasErrored: state.postsState.hasErrored,
+	isLoading: state.postsState.isLoading,
 });
 
 const mapDispatchToProps = dispatch => ({

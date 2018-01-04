@@ -14,7 +14,8 @@
 		"indent": [2, "tab"],
 		"max-len": [1, 100, 2,
 			{
-				"ignoreComments": true
+				"ignoreComments": true,
+				"ignoreStrings": true
 			}],
 		"no-tabs": 0,
 		"react/prop-types": [2],

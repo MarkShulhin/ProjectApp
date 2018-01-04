@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from '../../img/logo.svg';
 import NavBar from '../Partials/NavBar';
 
-export default class Header extends React.Component {
+export default class Header extends Component {
 	render() {
 		return (
 			<header>
