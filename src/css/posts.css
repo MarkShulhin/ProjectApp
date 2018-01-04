@@ -3,6 +3,7 @@
     line-height: 1.6em;
     max-height: 500px;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 * {

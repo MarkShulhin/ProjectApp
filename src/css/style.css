@@ -191,6 +191,10 @@ header {
     .menu .hamburger {
         display: inline-block;
     }
+
+    .menu.active .flex-nav {
+        margin-left: 10%;
+    }
     
     .menu.active .flex-nav .nav-item {
         display: block;
