@@ -12,6 +12,7 @@ class PostList extends Component {
 	}
 
 	render() {
+		const { posts } = this.props;
 		return (
 			<main class="main-posts">
 				{
@@ -29,8 +30,8 @@ class PostList extends Component {
 						: null
 				}
 				<section class='posts'>
-					{this.props.posts.map(post => (
-						<PostPreview key={post.id} post={post} />
+					{Object.keys(posts).map(id => (
+						<PostPreview key={posts[id].id} post={posts[id]} />
 					))}
 				</section>
 			</main>
