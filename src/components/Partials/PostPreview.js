@@ -15,8 +15,8 @@ export default class PostPreview extends Component {
 				<p>{body}</p>
 				<p><Link to={`/${id}`} class="p-btn">Read More</Link></p>
 				<footer class="posts-info">
-					<span>{author}</span>
-					<span>{comments}</span>
+					<span>By {author}</span>
+					<span>{comments} comments</span>
 				</footer>
 			</article>
 		);

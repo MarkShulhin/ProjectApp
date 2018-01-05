@@ -30,7 +30,7 @@ class PostList extends Component {
 				}
 				<section class='posts'>
 					{this.props.posts.map(post => (
-						<PostPreview post={post} />
+						<PostPreview key={post.id} post={post} />
 					))}
 				</section>
 			</main>

@@ -1,7 +1,7 @@
 .main-posts {
     font-family: 'Georgia', Times, serif;
     line-height: 1.6em;
-    max-height: 500px;
+    max-height: 600px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 }
@@ -30,7 +30,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: top;
-    padding: 5%;
+    padding: 5% 0 5% 5%;
 }
 .posts__item {
     flex-grow: 1;

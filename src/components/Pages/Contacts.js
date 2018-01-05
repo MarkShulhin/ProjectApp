@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Header from './Header';
 import ContactsInfo from '../Partials/ContatcsInfo';
 import ContactsForm from '../Partials/ContactsForm';
 import '../../css/contacts.css';
@@ -8,7 +7,6 @@ export default class Contacts extends Component {
 	render() {
 		return (
 			<div>
-				<Header/>
 				<main class="flex-container contacts-block">
 					<h1 class="main-headline">Contacts</h1>
 
