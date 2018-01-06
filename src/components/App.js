@@ -1,11 +1,15 @@
 import 'normalize.css';
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
+
+/* Components */
 import Header from './Pages/Header';
 import Footer from './Pages/Footer';
 import Home from './Pages/Home';
 import Contacts from './Pages/Contacts';
 import NotFound from './Pages/NotFound';
+import Post from './Partials/Post';
+/* Styles */
 import '../css/style.css';
 
 export default class App extends Component {
@@ -17,6 +21,7 @@ export default class App extends Component {
 					<Switch>
 						<Route exact path='/' component={Home} />
 						<Route path='/contacts' component={Contacts} />
+						<Route path='/:id' component={Post} />
 						<Route component={NotFound}/>
 					</Switch>
 				</div>

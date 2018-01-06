@@ -43,7 +43,7 @@ PostList.propTypes = {
 	fetchData: PropTypes.func,
 	hasErrored: PropTypes.bool,
 	isLoading: PropTypes.bool,
-	posts: PropTypes.arrayOf(PropTypes.object),
+	posts: PropTypes.any,
 };
 
 const mapStateToProps = state => ({
