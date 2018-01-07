@@ -1,11 +1,21 @@
 const debug = process.env.NODE_ENV !== 'production';
 const webpack = require('webpack');
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 	context: path.join(__dirname, 'src'),
 	devtool: debug ? 'inline-sourcemap' : false,
 	entry: './index.js',
+	plugins: [
+		new webpack.NoEmitOnErrorsPlugin(),
+		new HtmlWebpackPlugin({
+			template: './index.html',
+			favicon: './img/favicon.ico',
+			filename: 'index.html',
+			inject: 'body',
+		}),
+	],
 	module: {
 		loaders: [
 			{
@@ -44,7 +54,7 @@ module.exports = {
 				}],
 			},
 			{
-				test: /.(ico)(\?[a-z0-9]+)?$/,
+				test: /.(ico|jpg|png)(\?[a-z0-9]+)?$/,
 				use: [{
 					loader: 'file-loader',
 					options: {
@@ -57,13 +67,12 @@ module.exports = {
 	},
 	devServer: {
 		historyApiFallback: true,
+		contentBase: path.join(__dirname, 'src'),
+		port: 8090,
 	},
 	output: {
-		path: `${__dirname}/src/`,
-		filename: 'bundle.min.js',
+		path: path.resolve(__dirname, 'dist'),
+		filename: 'bundle.js',
+		publicPath: '/',
 	},
-	plugins: debug ? [] : [
-		new webpack.optimize.OccurrenceOrderPlugin(),
-		new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
-	],
 };

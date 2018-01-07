@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
+import { Link } from 'react-router-dom';
 import { postsFetchData } from '../../actions/posts';
+import { apiPrefix } from '../../../server/config.json';
 import '../../css/loader.css';
 import '../../css/post.css';
 
 class Post extends Component {
 	componentDidMount() {
 		if (this.props.posts.length === 0) {
-			this.props.fetchData('assets/posts.json');
+			this.props.fetchData(`${apiPrefix}/posts`);
 		}
 	}
 	render() {
-		console.log(this.props.match.params);
 		const { id } = this.props.match.params;
 		const post = this.props.posts[`${id}`];
 
@@ -31,6 +32,10 @@ class Post extends Component {
 		return (
 			<div class="post-wrapper">
 				<main class="post">
+					<Link to='/' class="post-arrow">
+						<img src="../img/slider-left-arrow.svg"/>
+						<span>Back to main</span>
+					</Link>
 					<h1 class="post-headline">{post.title}</h1>
 					<img src={post.poster} class="post-poster" />
 					<div class="post-body">
@@ -67,7 +72,7 @@ Post.propTypes = {
 	fetchData: PropTypes.func,
 	hasErrored: PropTypes.bool,
 	isLoading: PropTypes.bool,
-	posts: PropTypes.array.isRequired,
+	posts: PropTypes.any,
 	match: PropTypes.object,
 };
 

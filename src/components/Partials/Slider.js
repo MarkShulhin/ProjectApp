@@ -5,6 +5,7 @@ import Dots from './Dots';
 import Autoplay from './Autoplay';
 import SliderLeftArrow from './SliderLeftArrow';
 import SliderRightArrow from './SliderRightArrow';
+import { apiPrefix } from '../../../server/config.json';
 import '../../css/slider.css';
 
 export default class Slider extends Component {
@@ -20,7 +21,7 @@ export default class Slider extends Component {
 	}
 
 	componentDidMount = () => {
-		axios.get('assets/images.json')
+		axios.get(`${apiPrefix}/images`)
 			.then((res) => {
 				this.setState({ images: res.data });
 			});

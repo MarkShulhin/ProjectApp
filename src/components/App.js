@@ -19,10 +19,11 @@ export default class App extends Component {
 				<div className="site-content">
 					<Header />
 					<Switch>
-						<Route exact path='/' component={Home} />
+						<Route exact path="/" component={Home} />
+						<Route exact path="/posts" component={Home} />
+						<Route path="/posts/:id" component={Post} />
 						<Route path='/contacts' component={Contacts} />
-						<Route path='/:id' component={Post} />
-						<Route component={NotFound}/>
+						<Route path='*' component={NotFound}/>
 					</Switch>
 				</div>
 				<Footer />

@@ -1,6 +1,9 @@
 # VS Code settings
 .vscode
 
+#dist
+dist
+
 # Logs
 logs
 *.log

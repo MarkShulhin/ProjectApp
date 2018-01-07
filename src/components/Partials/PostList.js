@@ -3,12 +3,13 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { postsFetchData } from '../../actions/posts';
 import PostPreview from './PostPreview';
+import { apiPrefix } from '../../../server/config.json';
 import '../../css/loader.css';
 import '../../css/posts.css';
 
 class PostList extends Component {
 	componentDidMount() {
-		this.props.fetchData('assets/posts.json');
+		this.props.fetchData(`${apiPrefix}/posts`);
 	}
 
 	render() {

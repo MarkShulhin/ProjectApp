@@ -13,7 +13,7 @@ export default class PostPreview extends Component {
 			<article class="posts__item">
 				<h2>{title}</h2>
 				<p>{body}</p>
-				<p><Link to={`/${id}`} class="p-btn">Read More</Link></p>
+				<p><Link to={`/posts/${id}`} class="p-btn">Read More</Link></p>
 				<footer class="posts-info">
 					<span>By {author}</span>
 					<span>{comments} comments</span>
