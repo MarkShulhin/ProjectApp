@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+.actors-content {
+    display: block;
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 60px auto;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.actors-head {
+    margin-bottom: 20px;
+}
+
+.actors-label {
+    text-transform: uppercase;
+    font-size: 1.313em;
+    margin: 0;
+}
+
+
+.tile-list {
+    padding: 0;
+    margin: 0 0 0 -16px;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+.tile-list li {
+    width: calc( 33.33% - 16px);
+    margin-left: 16px;
+    margin-bottom: 16px;
+    border-radius: 2px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: -webkit-match-parent;
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.tile-list li:hover,
+.tile-list li:focus {
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    color: #444;
+}
+
+.tile-list li a {
+    text-decoration: none;
+}
+
+.tile-list li .details {
+    background: #f8f8f8;
+    height: 100px;
+    padding: 6%;
+    font-size: 1em;
+    display: block;
+}
+.tile-list li .details>* {
+    display: block;
+}
+
+.tile-list li .details strong {
+    line-height: 1.4em;
+    color: #000;
+}
+
+.tile-list li .details small {
+    font-size: 0.750em;
+    color: rgba(0,0,0,0.5);
+    font-weight: 600;
+    line-height: 1.2em;
+    margin-top: 4px;
+}
+
+.img-container {
+    padding-bottom: 60%;
+    display: block;
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+    height: 0;
+}
+
+img.center-h {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-height: 100%;
+    min-width: 100%;
+    max-height: 100%;
+    width: auto;
+    transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 600px) {
+    .actors-content {
+        width: 95%;
+        margin: 20px auto;
+        font-size: 14px;
+    }
+    .tile-list {
+        margin-left: -8px;
+        font-size: 14px;
+        margin-bottom: 16px;
+    }
+    .tile-list li {
+        margin-left: 8px;
+        margin-bottom: 8px;
+        width: calc( 50% - 8px);
+    }
+}

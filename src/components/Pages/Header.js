@@ -5,7 +5,7 @@ import NavBar from '../Partials/NavBar';
 export default class Header extends Component {
 	render() {
 		return (
-			<header>
+			<header class='app-header'>
 				<div className="logo">
 					<img src={logo} alt="logo"/>
 				</div>

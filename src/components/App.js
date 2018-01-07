@@ -6,6 +6,7 @@ import { Route, Switch } from 'react-router-dom';
 import Header from './Pages/Header';
 import Footer from './Pages/Footer';
 import Home from './Pages/Home';
+import Actors from './Pages/Actors';
 import Contacts from './Pages/Contacts';
 import NotFound from './Pages/NotFound';
 import Post from './Partials/Post';
@@ -23,6 +24,7 @@ export default class App extends Component {
 						<Route exact path="/posts" component={Home} />
 						<Route path="/posts/:id" component={Post} />
 						<Route path='/contacts' component={Contacts} />
+						<Route path='/actors' component={Actors} />
 						<Route path='*' component={NotFound}/>
 					</Switch>
 				</div>

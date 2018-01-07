@@ -19,7 +19,7 @@ body {
 }
 
 /* Menu and Header */
-header {
+.app-header {
     padding: 0;
     margin: 0;
     width:100%;
@@ -251,7 +251,7 @@ header {
 @media screen and (max-width: 600px) {
 
     /* Menu */
-    header {
+    .app-header {
         flex-direction: row-reverse;
     }
     .flex-nav {
