@@ -11,6 +11,7 @@ export default class ActorPreview extends Component {
 			previewPic,
 			alt,
 		} = actor;
+
 		return (
 			<li>
 				<Link to={`/actors/${url}`} class="img-container">
