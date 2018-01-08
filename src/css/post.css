@@ -2,8 +2,6 @@
 .post-wrapper {
     display: flex;
     flex-direction: row;
-    
-    border: 1px solid red;
 }
 .post {
     flex-basis: 70%;
@@ -24,7 +22,6 @@
 
 .post-arrow span:hover {
     color:#000;
-    box-shadow: 
 }
 
 .post-headline {

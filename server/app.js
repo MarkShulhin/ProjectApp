@@ -3,6 +3,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import posts from '../src/assets/posts.json';
 import images from '../src/assets/images.json';
+import actors from '../src/assets/actors.json';
 import { serverPort } from './config.json';
 
 // Initialization of express application
@@ -22,6 +23,10 @@ app.get('/posts', (req, res) => {
 
 app.get('/images', (req, res) => {
 	res.send(images);
+});
+
+app.get('/actors', (req, res) => {
+	res.send(actors);
 });
 
 

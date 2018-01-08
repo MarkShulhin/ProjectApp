@@ -9,7 +9,9 @@ import '../../css/posts.css';
 
 class PostList extends Component {
 	componentDidMount() {
-		this.props.fetchData(`${apiPrefix}/posts`);
+		if (this.props.posts.length === 0) {
+			this.props.fetchData(`${apiPrefix}/posts`);
+		}
 	}
 
 	render() {
@@ -32,7 +34,7 @@ class PostList extends Component {
 				}
 				<section class='posts'>
 					{Object.keys(posts).map(id => (
-						<PostPreview key={posts[id].id} post={posts[id]} />
+						<PostPreview key={id} post={posts[id]} />
 					))}
 				</section>
 			</main>

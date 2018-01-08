@@ -1,79 +1,45 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
+import { actorsFetchData } from '../../actions/actors';
+import ActorsList from '../Partials/ActorsList';
+import { apiPrefix } from '../../../server/config.json';
 import '../../css/actors.css';
 
-export default class Actors extends Component {
+class Actors extends Component {
+	componentDidMount() {
+		if (this.props.actors.length === 0) {
+			this.props.fetchData(`${apiPrefix}/actors`);
+		}
+	}
 	render() {
+		const { actors } = this.props;
 		return (
 			<section class="actors-content">
 				<header class="actors-head">
 					<h1 class="actors-label">Actors</h1>
 				</header>
-				<ul class="tile-list">
-					<li>
-						<a href="#" class="img-container">
-							<img src="http://cdn.watch.aetnd.com/prod.cdn.watch.aetnd.com.s3.amazonaws.com/sites/2/2016/10/vikings_season4_cast_ragnar_16_9.jpg?w=548" class="center-h" alt="Travis Fimmel as Ragnar, Vikings"/>
-						</a>
-						<a href="#" class="details">
-							<strong>Ragnar</strong>
-							<small>Played by Travis Fimmel</small>
-						</a>
-					</li>
-					<li>
-						<a href="#" class="img-container">
-							<img src="http://cdn.watch.aetnd.com/prod.cdn.watch.aetnd.com.s3.amazonaws.com/sites/2/2016/10/vikings_season4_cast_ragnar_16_9.jpg?w=548" class="center-h" alt="Travis Fimmel as Ragnar, Vikings"/>
-						</a>
-						<a href="#" class="details">
-							<strong>Ragnar</strong>
-							<small>Played by Travis Fimmel</small>
-						</a>
-					</li>
-					<li>
-						<a href="#" class="img-container">
-							<img src="http://cdn.watch.aetnd.com/prod.cdn.watch.aetnd.com.s3.amazonaws.com/sites/2/2016/10/vikings_season4_cast_ragnar_16_9.jpg?w=548" class="center-h" alt="Travis Fimmel as Ragnar, Vikings"/>
-						</a>
-						<a href="#" class="details">
-							<strong>Ragnar</strong>
-							<small>Played by Travis Fimmel</small>
-						</a>
-					</li>
-					<li>
-						<a href="#" class="img-container">
-							<img src="http://cdn.watch.aetnd.com/prod.cdn.watch.aetnd.com.s3.amazonaws.com/sites/2/2016/10/vikings_season4_cast_ragnar_16_9.jpg?w=548" class="center-h" alt="Travis Fimmel as Ragnar, Vikings"/>
-						</a>
-						<a href="#" class="details">
-							<strong>Ragnar</strong>
-							<small>Played by Travis Fimmel</small>
-						</a>
-					</li>
-					<li>
-						<a href="#" class="img-container">
-							<img src="http://cdn.watch.aetnd.com/prod.cdn.watch.aetnd.com.s3.amazonaws.com/sites/2/2016/10/vikings_season4_cast_ragnar_16_9.jpg?w=548" class="center-h" alt="Travis Fimmel as Ragnar, Vikings"/>
-						</a>
-						<a href="#" class="details">
-							<strong>Ragnar</strong>
-							<small>Played by Travis Fimmel</small>
-						</a>
-					</li>
-					<li>
-						<a href="#" class="img-container">
-							<img src="http://cdn.watch.aetnd.com/prod.cdn.watch.aetnd.com.s3.amazonaws.com/sites/2/2016/10/vikings_season4_cast_ragnar_16_9.jpg?w=548" class="center-h" alt="Travis Fimmel as Ragnar, Vikings"/>
-						</a>
-						<a href="#" class="details">
-							<strong>Ragnar</strong>
-							<small>Played by Travis Fimmel</small>
-						</a>
-					</li>
-					<li>
-						<a href="#" class="img-container">
-							<img src="http://cdn.watch.aetnd.com/prod.cdn.watch.aetnd.com.s3.amazonaws.com/sites/2/2016/10/vikings_season4_cast_ragnar_16_9.jpg?w=548" class="center-h" alt="Travis Fimmel as Ragnar, Vikings"/>
-						</a>
-						<a href="#" class="details">
-							<strong>Ragnar</strong>
-							<small>Played by Travis Fimmel</small>
-						</a>
-					</li>
-				</ul>
+				<ActorsList actors={actors} />
 			</section>
 		);
 	}
 }
+
+Actors.propTypes = {
+	fetchData: PropTypes.func,
+	hasErrored: PropTypes.bool,
+	isLoading: PropTypes.bool,
+	actors: PropTypes.any,
+};
+
+const mapStateToProps = state => ({
+	actors: state.actorsState.actors,
+	hasErrored: state.actorsState.hasErrored,
+	isLoading: state.actorsState.isLoading,
+});
+
+const mapDispatchToProps = dispatch => ({
+	fetchData: url => dispatch(actorsFetchData(url)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Actors);
