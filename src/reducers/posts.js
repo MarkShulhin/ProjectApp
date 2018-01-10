@@ -5,6 +5,7 @@ const initialState = {
 	hasErrored: false,
 	isLoading: false,
 	limit: 10,
+	searchFilter: '',
 };
 
 const postsReducer = function reducer(state = initialState, action) {
@@ -31,6 +32,18 @@ const postsReducer = function reducer(state = initialState, action) {
 		return {
 			...state,
 			limit: state.limit + action.limit,
+		};
+
+	case types.POSTS_RESET_LIMIT:
+		return {
+			...state,
+			limit: action.limit,
+		};
+
+	case types.FIND_POSTS:
+		return {
+			...state,
+			searchFilter: action.searchFilter,
 		};
 
 	default:

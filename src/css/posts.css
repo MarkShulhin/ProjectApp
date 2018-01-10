@@ -1,8 +1,6 @@
 .main-posts {
     font-family: 'Georgia', Times, serif;
     line-height: 1.6em;
-    max-height: 600px;
-    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 }
 
@@ -31,6 +29,8 @@
     flex-wrap: wrap;
     align-items: top;
     padding: 5% 0 2.5% 5%;
+    max-height: 600px;
+    overflow-y: auto;
 }
 .posts__item {
     flex-grow: 1;
@@ -82,17 +82,44 @@
     justify-content: space-between;
     margin-top: 10px;
 }
+
 .load-btn {
+    width: 100%;
+    align-self: center;
+}
+
+.load-btn a {
     margin: 0 auto 20px auto;
     display: block;
     width: 150px;
     text-align: center;
     border-radius: 20px;
+    transition: .1s all;
 }
 
-.load-btn:before {
+.load-btn a:before {
     border-radius: 15px;
+    transition: .1s all;
 }
+
+.search-bar {
+    border-bottom: 2px solid #000;
+    height: 40px;
+    font-family: 'Bitter', serif;
+    font-size: 1.25em;
+}
+
+.search-bar input {
+    width: 100%;
+    height: 100%;
+    background-color: wheat;
+    padding: 15px;
+}
+
+.search-bar input::-webkit-input-placeholder {
+    text-align: center;
+}
+
   /* MEDIA */
 
 @media all and (min-width: 600px) {

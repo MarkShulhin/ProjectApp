@@ -50,3 +50,17 @@ export function postsLoadMore(limit) {
 		limit,
 	};
 }
+
+export function postsResetLimit() {
+	return {
+		type: types.POSTS_RESET_LIMIT,
+		limit: 10,
+	};
+}
+
+export function postsSearch(searchFilter) {
+	return {
+		type: types.FIND_POSTS,
+		searchFilter,
+	};
+}

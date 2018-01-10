@@ -21,7 +21,7 @@ body {
 .app-header {
     padding: 0;
     margin: 0;
-    width:100%;
+    width: 100%;
     height: 85px;
     background: #f2825b;
     background: -moz-linear-gradient(top, #f2825b 0%, #e55b2b 50%, #f07146 100%);
