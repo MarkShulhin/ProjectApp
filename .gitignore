@@ -4,6 +4,9 @@
 #dist
 dist
 
+#worklog
+worklog.txt
+
 # Logs
 logs
 *.log

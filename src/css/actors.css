@@ -3,8 +3,9 @@
 .actors-content {
     display: block;
     font-family: "Open Sans", sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
+    font-stretch: 100%;
     margin: 60px auto;
     width: 100%;
     max-width: 1100px;
@@ -93,6 +94,67 @@ img.center-h {
     max-height: 100%;
     width: auto;
     transform: translate(-50%, -50%);
+}
+
+/* Actor profile */
+
+figure, img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+
+.article-container .item-img-container {
+    margin-bottom: 20px;
+}
+
+img.responsive-img {
+    width: 100%;
+}
+
+.main-article .section-title {
+    margin-bottom: 20px;
+    font-size: 1.313em;
+}
+.main-article .section-title h1 {
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+
+.main-article .section-title strong {
+    text-transform: uppercase;
+    vertical-align: middle;
+    font-weight: 600;
+    font-size: 100%;
+}
+
+.main-article .section-title small {
+    margin-left: 5px;
+    font-size: 0.762em;
+    vertical-align: bottom;
+    font-weight: 400;
+    line-height: 1.1em;
+}
+
+.main-article p {
+    margin-bottom: 20px;
+    line-height: 1.55556em;
+}
+
+.extra-wrapper {
+    width: 100%;
+    margin: 0;
+    background: #dddddd;
+    padding: 16px 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 
 @media screen and (max-width: 600px) {

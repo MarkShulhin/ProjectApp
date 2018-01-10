@@ -1,19 +1,21 @@
 {
-  "Ragnar": {
+  "ragnar": {
+    "id": "ragnar",
     "title": "Ragnar",
     "subtitle": "Played by Travis Fimmel",
     "heroInfo":
       "Ragnar Lothbrok is a restless warrior and family man who longs to find and explore new countries across the sea. His goal is to settle his own people to thrive on rich new farm lands. Now that he is King, his ambition to raid new kingdoms remains unquenchable, not least because he claims to be an ancestor of the Norse god Odin–the god of slain warriors, but also the god of eternal curiosity.",
     "actorName": "Travis Fimmel",
     "actorInfo":
-      "On the big screen, Fimmel was most recently seen in lead role in “WARCRAFT” for Legendary Pictures/Universal which amassed more than $450 million worldwide. The film also stars Ben Foster, Dominic Cooper and Paula Patton and was directed by Duncan Jones. He was also seen in the romantic comedy “Maggie’s Plan” starring alongside Julianne Moore, Ethan Hawke and Greta Gerwig. The Rebecca Miller directed film premiered at the Toronto International Film Festival and was acquired by Sony Pictures Classics.Upcoming releases include a supporting role in the A24 film “Lean On Pete” opposite Chloe Sevigny, Steve Buscemi and Charlie Plummer and a lead role in the Paul Haggis co-scripted “Inversion,” as well as the Mark Steven Johnson indie “Finding Steve McQueen” with Forest Whitaker, Kate Bosworth and William Fichtner.Past credits include a supporting role opposite Matthew McConaughey as Johnny Doran in the Anchor Bay Entertainment film “Surfer, Dude”, a comedy about a surfer experiencing an existential crisis for director S.R. Blinder. Additional independent film credits include Ivory Trade, Needle and Restraint opposite Teresa Palmer and Stephen Moyer, The Experiment with Adrien Brody and Forest Whitaker, The Baytown Outlaws with Billy Bob Thornton, and Harodim, opposite Peter Fonda. In 2008, he starred opposite the late Patrick Swayze on A&E’s drama series “The Beast.”Fimmel is a native of Echuca Victoria, Australia.",
+      "On the big screen, Fimmel was most recently seen in lead role in “WARCRAFT” for Legendary Pictures/Universal which amassed more than $450 million worldwide. The film also stars Ben Foster, Dominic Cooper and Paula Patton and was directed by Duncan Jones. He was also seen in the romantic comedy “Maggie’s Plan” starring alongside Julianne Moore, Ethan Hawke and Greta Gerwig. The Rebecca Miller directed film premiered at the Toronto International Film Festival and was acquired by Sony Pictures Classics.\r\nUpcoming releases include a supporting role in the A24 film “Lean On Pete” opposite Chloe Sevigny, Steve Buscemi and Charlie Plummer and a lead role in the Paul Haggis co-scripted “Inversion,” as well as the Mark Steven Johnson indie “Finding Steve McQueen” with Forest Whitaker, Kate Bosworth and William Fichtner.\r\nPast credits include a supporting role opposite Matthew McConaughey as Johnny Doran in the Anchor Bay Entertainment film “Surfer, Dude”, a comedy about a surfer experiencing an existential crisis for director S.R. Blinder. Additional independent film credits include Ivory Trade, Needle and Restraint opposite Teresa Palmer and Stephen Moyer, The Experiment with Adrien Brody and Forest Whitaker, The Baytown Outlaws with Billy Bob Thornton, and Harodim, opposite Peter Fonda. In 2008, he starred opposite the late Patrick Swayze on A&E’s drama series “The Beast.”\r\nFimmel is a native of Echuca Victoria, Australia.",
     "poster":
       "http://mythologian.net/wp-content/uploads/2017/02/ragnar-lothbrok-real-vikings-1024x629.jpg",
     "previewPic":
       "http://cdn.watch.aetnd.com/prod.cdn.watch.aetnd.com.s3.amazonaws.com/sites/2/2016/10/vikings_season4_cast_ragnar_16_9.jpg?w=548",
     "alt": "Travis Fimmel as Ragnar, Vikings"
   },
-  "Lagertha": {
+  "lagertha": {
+    "id": "lagertha",
     "title": "Lagertha",
     "subtitle": "Played by Katheryn Winnick",
     "heroInfo":
@@ -27,7 +29,8 @@
       "http://cdn.watch.aetnd.com/prod.cdn.watch.aetnd.com.s3.amazonaws.com/sites/2/2016/10/vikings_season4_cast_lagertha.jpg?w=548",
     "alt": "Katheryn Winnick as Lagertha, Vikings"
   },
-  "Aethelwulf": {
+  "aethelwulf": {
+    "id": "aethelwulf",
     "title": "Aethelwulf",
     "subtitle": "Played by Moe Dunford",
     "heroInfo":
@@ -41,7 +44,8 @@
       "http://cdn.watch.aetnd.com/prod.cdn.watch.aetnd.com.s3.amazonaws.com/sites/2/2016/10/vikings_season4_cast_aethelwulf.jpg?w=548",
     "alt": "Moe Dunford as Aethelwulf, Vikings"
   },
-  "Astrid": {
+  "astrid": {
+    "id": "astrid",
     "title": "Astrid",
     "subtitle": "Played by Josefin Asplund",
     "heroInfo":
@@ -55,7 +59,8 @@
       "http://cdn.watch.aetnd.com/prod.cdn.watch.aetnd.com.s3.amazonaws.com/sites/2/2016/11/vikings_4b_cast_astrid.jpg?w=548",
     "alt": "Josefin Asplund as Astrid , Vikings"
   },
-  "Bjorn": {
+  "bjorn": {
+    "id": "bjorn",
     "title": "Bjorn",
     "subtitle": "Played by Alexander Ludwig",
     "heroInfo":
@@ -69,7 +74,8 @@
       "http://cdn.watch.aetnd.com/prod.cdn.watch.aetnd.com.s3.amazonaws.com/sites/2/2016/10/vikings_season4_cast_bjorn.jpg?w=548",
     "alt": "Alexander Ludwig as Bjorn , Vikings"
   },
-  "Emperor-charles": {
+  "emperor-charles": {
+    "id": "emperor-charles",
     "title": "Emperor Charles",
     "subtitle": "Played by Lothaire Bluteau",
     "heroInfo":
@@ -83,7 +89,8 @@
       "http://cdn.watch.aetnd.com/prod.cdn.watch.aetnd.com.s3.amazonaws.com/sites/2/2016/10/vikings_season4_cast_charles.jpg?w=548",
     "alt": "Lothaire Bluteau as Emperor Charles , Vikings"
   },
-  "Floki": {
+  "floki": {
+    "id": "floki",
     "title": "Floki",
     "subtitle": "Played by Gustaf Skarsgård",
     "heroInfo":
@@ -97,6 +104,7 @@
     "alt": "Gustaf Skarsgård as Floki, Vikings"
   },
   "halfdan-the-black": {
+    "id": "halfdan-the-black",
     "title": "Halfdan the Black",
     "subtitle": "Played by Jasper Pääkkönen",
     "heroInfo": "King Harald’s violent, devoutly loyal younger brother.",
@@ -109,7 +117,8 @@
       "http://cdn.watch.aetnd.com/prod.cdn.watch.aetnd.com.s3.amazonaws.com/sites/2/2016/10/vikings_season4_cast_halfdan.jpg?w=548",
     "alt": "Jasper Pääkkönen as Halfdan the Black, Vikings"
   },
-  "Hvitserk": {
+  "hvitserk": {
+    "id": "hvitserk",
     "title": "Hvitserk",
     "subtitle": "Played by Marco Ilsø",
     "heroInfo":
@@ -124,6 +133,7 @@
     "alt": "Marco Ilsø as Hvitserk, Vikings"
   },
   "ivar-the-boneless": {
+    "id": "ivar-the-boneless",
     "title": "Ivar the Boneless",
     "subtitle": "Played by Alex Høgh Andersen",
     "heroInfo":
@@ -137,7 +147,8 @@
       "http://cdn.watch.aetnd.com/prod.cdn.watch.aetnd.com.s3.amazonaws.com/sites/2/2016/11/vikings_4b_cast_ivar.jpg?w=548",
     "alt": "Alex Høgh Andersen as Ivar the Boneless, Vikings"
   },
-  "Judith": {
+  "judith": {
+    "id": "judith",
     "title": "Judith",
     "subtitle": "Played by Jennie Jacques",
     "heroInfo":
@@ -152,6 +163,7 @@
     "alt": "Jennie Jacques as Judith, Vikings"
   },
   "king-ecbert": {
+    "id": "king-ecbert",
     "title": "King Ecbert",
     "subtitle": "Played by Linus Roache",
     "heroInfo":
@@ -166,6 +178,7 @@
     "alt": "Linus Roache as King Ecbert, Vikings"
   },
   "king-harald-finehair": {
+    "id": "king-harald-finehair",
     "title": "King Harald Finehair",
     "subtitle": "Played by Peter Franzén",
     "heroInfo":
@@ -180,6 +193,7 @@
     "alt": "Peter Franzén as King Harald Finehair, Vikings"
   },
   "princess-gisla": {
+    "id": "princess-gisla",
     "title": "Princess Gisla",
     "subtitle": "Played by Morgane Polanski",
     "heroInfo":
@@ -194,6 +208,7 @@
     "alt": "Morgane Polanski as Princess Gisla, Vikings"
   },
   "queen-aslaug": {
+    "id": "queen-aslaug",
     "title": "Queen Aslaug",
     "subtitle": "Played by Alyssa Sutherland",
     "heroInfo":
@@ -207,7 +222,8 @@
       "http://cdn.watch.aetnd.com/prod.cdn.watch.aetnd.com.s3.amazonaws.com/sites/2/2016/10/vikings_season4_cast_aslaug_16_9.jpg?w=548",
     "alt": "Alyssa Sutherland as Queen Aslaug, Vikings"
   },
-  "Rollo": {
+  "rollo": {
+    "id": "rollo",
     "title": "Rollo",
     "subtitle": "Played by Clive Standen",
     "heroInfo":
@@ -222,6 +238,7 @@
     "alt": "Clive Standen as Rollo, Vikings"
   },
   "sigurd-snake-in-the-eye": {
+    "id": "sigurd-snake-in-the-eye",
     "title": "Sigurd Snake in the Eye",
     "subtitle": "Played by David Lindström",
     "heroInfo":
@@ -235,7 +252,8 @@
       "http://cdn.watch.aetnd.com/prod.cdn.watch.aetnd.com.s3.amazonaws.com/sites/2/2016/11/vikings_4b_cast_sigurd.jpg?w=548",
     "alt": "David Lindström as Sigurd Snake in the Eye, Vikings"
   },
-  "Ubbe": {
+  "ubbe": {
+    "id": "ubbe",
     "title": "Ubbe",
     "subtitle": "Played by Jordan Patrick Smith",
     "heroInfo":
@@ -250,6 +268,7 @@
     "alt": "Jordan Patrick Smith as Ubbe, Vikings"
   },
   "the-seer": {
+    "id": "the-seer",
     "title": "The Seer",
     "subtitle": "Played by John Kavanagh",
     "heroInfo":

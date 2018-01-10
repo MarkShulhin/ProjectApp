@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { actorsFetchData } from '../../actions/actors';
-import ActorsList from '../Partials/ActorsList';
+import Cast from '../Partials/Cast';
 import { apiPrefix } from '../../../server/config.json';
 import '../../css/actors.css';
 
@@ -33,7 +33,7 @@ class Actors extends Component {
 						</div>
 						: null
 				}
-				<ActorsList actors={actors} />
+				<Cast actors={actors} />
 			</section>
 		);
 	}

@@ -30,7 +30,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: top;
-    padding: 5% 0 5% 5%;
+    padding: 5% 0 2.5% 5%;
 }
 .posts__item {
     flex-grow: 1;
@@ -69,6 +69,7 @@
     padding-right: .75em;
     color: #fff;
     border-color: #FF521B;
+    cursor: pointer;
 }
 .p-btn:hover:before {
     height: 100%;
@@ -80,6 +81,17 @@
     font-size: 0.75em;
     justify-content: space-between;
     margin-top: 10px;
+}
+.load-btn {
+    margin: 0 auto 20px auto;
+    display: block;
+    width: 150px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.load-btn:before {
+    border-radius: 15px;
 }
   /* MEDIA */
 

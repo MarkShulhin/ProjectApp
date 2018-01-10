@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 
 export default class ActorPreview extends Component {
 	render() {
-		const { actor, url } = this.props;
+		const { actor } = this.props;
 		const {
+			id,
 			title,
 			subtitle,
 			previewPic,
@@ -14,10 +15,10 @@ export default class ActorPreview extends Component {
 
 		return (
 			<li>
-				<Link to={`/actors/${url}`} class="img-container">
+				<Link to={`/actors/${id}`} class="img-container">
 					<img src={previewPic} class="center-h" alt={alt} />
 				</Link>
-				<Link to={`/actors/${url}`} class="details">
+				<Link to={`/actors/${id}`} class="details">
 					<strong>{title}</strong>
 					<small>{subtitle}</small>
 				</Link>

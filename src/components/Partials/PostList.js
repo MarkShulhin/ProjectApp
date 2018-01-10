@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { postsFetchData } from '../../actions/posts';
+import { postsFetchData, postsLoadMore } from '../../actions/posts';
 import PostPreview from './PostPreview';
 import { apiPrefix } from '../../../server/config.json';
 import '../../css/loader.css';
@@ -15,7 +15,13 @@ class PostList extends Component {
 	}
 
 	render() {
-		const { posts } = this.props;
+		const { posts, loadMore, limit } = this.props;
+		const visiblePosts = Object.values(posts);
+		// Variable for later checking if limit is bigger than actual number of posts
+		const { length } = visiblePosts;
+		// Cutting off only posts we need to render
+		visiblePosts.length = limit;
+
 		return (
 			<main class="main-posts">
 				{
@@ -33,10 +39,19 @@ class PostList extends Component {
 						: null
 				}
 				<section class='posts'>
-					{Object.keys(posts).map(id => (
-						<PostPreview key={id} post={posts[id]} />
+					{visiblePosts.map((post, id) => (
+						<PostPreview key={id + 1} post={post} />
 					))}
 				</section>
+				{/* If all posts were rendered, button will be removed */}
+				{
+					length !== limit ?
+						<a class="p-btn load-btn" onClick={(e) => {
+							e.preventDefault();
+							loadMore(10);
+						}}>Load more</a>
+						: null
+				}
 			</main>
 		);
 	}
@@ -44,19 +59,23 @@ class PostList extends Component {
 
 PostList.propTypes = {
 	fetchData: PropTypes.func,
+	loadMore: PropTypes.func,
 	hasErrored: PropTypes.bool,
 	isLoading: PropTypes.bool,
 	posts: PropTypes.any,
+	limit: PropTypes.number,
 };
 
 const mapStateToProps = state => ({
 	posts: state.postsState.posts,
 	hasErrored: state.postsState.hasErrored,
 	isLoading: state.postsState.isLoading,
+	limit: state.postsState.limit,
 });
 
 const mapDispatchToProps = dispatch => ({
 	fetchData: url => dispatch(postsFetchData(url)),
+	loadMore: limit => dispatch(postsLoadMore(limit)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostList);

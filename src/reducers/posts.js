@@ -4,6 +4,7 @@ const initialState = {
 	posts: [],
 	hasErrored: false,
 	isLoading: false,
+	limit: 10,
 };
 
 const postsReducer = function reducer(state = initialState, action) {
@@ -24,6 +25,12 @@ const postsReducer = function reducer(state = initialState, action) {
 		return {
 			...state,
 			posts: action.posts,
+		};
+
+	case types.POSTS_LOAD_MORE:
+		return {
+			...state,
+			limit: state.limit + action.limit,
 		};
 
 	default:

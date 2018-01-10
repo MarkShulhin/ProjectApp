@@ -1,4 +1,3 @@
-import 'normalize.css';
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
@@ -10,6 +9,7 @@ import Actors from './Pages/Actors';
 import Contacts from './Pages/Contacts';
 import NotFound from './Pages/NotFound';
 import Post from './Partials/Post';
+import Actor from './Partials/Actor';
 /* Styles */
 import '../css/style.css';
 
@@ -24,6 +24,7 @@ export default class App extends Component {
 						<Route exact path="/posts" component={Home} />
 						<Route path="/posts/:id" component={Post} />
 						<Route path='/contacts' component={Contacts} />
+						<Route path='/actors/:hero' component={Actor} />
 						<Route path='/actors' component={Actors} />
 						<Route path='*' component={NotFound}/>
 					</Switch>

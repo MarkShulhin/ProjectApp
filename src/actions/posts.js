@@ -43,3 +43,10 @@ export function postsFetchData(url) {
 			});
 	};
 }
+
+export function postsLoadMore(limit) {
+	return {
+		type: types.POSTS_LOAD_MORE,
+		limit,
+	};
+}
