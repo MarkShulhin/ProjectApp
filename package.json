@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run server | npm run dev",
     "server": "babel-node server/app.js",
-    "dev": "webpack-dev-server --inline --hot --host 192.168.0.101 --open ",
+    "dev": "webpack-dev-server --inline --hot --host 192.168.0.102 --open ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

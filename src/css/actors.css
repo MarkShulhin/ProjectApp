@@ -157,7 +157,10 @@ img.responsive-img {
     vertical-align: baseline;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
+    .article-container {
+        margin: 0 10px;
+    }
     .actors-content {
         width: 95%;
         margin: 20px auto;

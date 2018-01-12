@@ -31,6 +31,13 @@ class PostList extends Component {
 		return visiblePosts;
 	}
 
+	scrollToTop() {
+		this.postsSection.scroll({
+			top: 0,
+			behavior: 'smooth',
+		});
+	}
+
 	render() {
 		const {
 			posts,
@@ -50,7 +57,7 @@ class PostList extends Component {
 						ref={(input) => { this.searchInput = input; }}
 						onChange={() => {
 							searchPosts(this.searchInput.value);
-							this.postsSection.scrollTop = 0;
+							this.scrollToTop();
 						}}
 					/>
 				</div>
@@ -78,6 +85,7 @@ class PostList extends Component {
 								))
 								: <div>No Matches</div>
 						}
+						{/* If all posts were rendered, button will be removed */}
 						{
 							initialLength > limit && initialLength > 10 ?
 								<div class="load-btn">
@@ -86,10 +94,15 @@ class PostList extends Component {
 										loadMore(10);
 									}}>Load more</a>
 								</div>
-								: null
+								:
+								<div class="load-btn">
+									<a class="p-btn back" onClick={(e) => {
+										e.preventDefault();
+										this.scrollToTop();
+									}}>Back To Top</a>
+								</div>
 						}
 					</section>
-					{/* If all posts were rendered, button will be removed */}
 				</main>
 			</div>
 		);

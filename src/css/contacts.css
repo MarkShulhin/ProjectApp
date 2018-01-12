@@ -75,7 +75,7 @@
 }
 
 .contact-form textarea {
-    height: 126px;
+    height: 92%;
 }
 
 .form-headline {
@@ -90,8 +90,8 @@
 
 
 .left {
-    width: 33%;
-    margin-right: 12%;
+    width: 40%;
+    margin-right: 5%;
 }
 
 /* contacts info block */
@@ -128,7 +128,7 @@
 
 
 /* media queries */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
     .info {
         width: 100%;
         margin-left: 20px;
