@@ -3,6 +3,7 @@
     "id": "ragnar",
     "title": "Ragnar",
     "subtitle": "Played by Travis Fimmel",
+    "role": "main",
     "heroInfo":
       "Ragnar Lothbrok is a restless warrior and family man who longs to find and explore new countries across the sea. His goal is to settle his own people to thrive on rich new farm lands. Now that he is King, his ambition to raid new kingdoms remains unquenchable, not least because he claims to be an ancestor of the Norse god Odin–the god of slain warriors, but also the god of eternal curiosity.",
     "actorName": "Travis Fimmel",
@@ -18,6 +19,7 @@
     "id": "lagertha",
     "title": "Lagertha",
     "subtitle": "Played by Katheryn Winnick",
+    "role": "main",
     "heroInfo":
       "Lagertha is the first wife of Ragnar Lothbrok. She is an Earl, a strong shield-maiden and a force to be reckoned with. She has always fought in the shield-wall alongside the men. Although fate has pulled her apart from Ragnar, it seems that the gods must have a plan to bring them back together, where they belong.",
     "actorName": "Katheryn Winnick",
@@ -33,6 +35,7 @@
     "id": "aethelwulf",
     "title": "Aethelwulf",
     "subtitle": "Played by Moe Dunford",
+    "role": "secondary",
     "heroInfo":
       "Son of King Ecbert, Aethelwulf doesn’t understand his father’s interest in Ragnar and the pagan Northmen, but as a faithful son he will do whatever his father asks. Ecbert is grooming him to become king and continue his lineage.",
     "actorName": "Moe Dunford",
@@ -48,6 +51,7 @@
     "id": "astrid",
     "title": "Astrid",
     "subtitle": "Played by Josefin Asplund",
+    "role": "secondary",
     "heroInfo":
       "Astrid is a beautiful young woman who has joined Lagertha’s court at Hedeby. She is a free spirit who refuses to accept social conventions or recognize any barriers to her freedom: she is on a voyage of self-discovery. Lagertha will train Astrid in the arts of war, and the arts of love.",
     "actorName": "Josefin Asplund",
@@ -63,6 +67,7 @@
     "id": "bjorn",
     "title": "Bjorn",
     "subtitle": "Played by Alexander Ludwig",
+    "role": "main",
     "heroInfo":
       "Bjorn Lothbrok is the son of Ragnar and Lagertha and the oldest of Ragnar’s many sons. Intelligent and determined, Bjorn loves and admires his father above all men. Following in Ragnar’s footsteps, Bjorn desires to test himself as a fighter as well as an explorer. After fighting in battle without receiving one wound or scratch, he garnered the famous nickname “Bjorn Ironside.”",
     "actorName": "Alexander Ludwig",
@@ -78,6 +83,7 @@
     "id": "emperor-charles",
     "title": "Emperor Charles",
     "subtitle": "Played by Lothaire Bluteau",
+    "role": "secondary",
     "heroInfo":
       "Emperor Charles is a complex, troubled man, who has taken full credit for the defeat of the Vikings, although he hid in cowardice during the battle.",
     "actorName": "Lothaire Bluteau",
@@ -93,6 +99,7 @@
     "id": "floki",
     "title": "Floki",
     "subtitle": "Played by Gustaf Skarsgård",
+    "role": "main",
     "heroInfo":
       "Floki is a genius ship builder and he designs and builds the prototype of the new generation of Viking ships which can sail across the open ocean but also up the shallowest of rivers. Without Floki, Ragnar would have never been able to fulfill his dreams of discovering new lands and new civilizations. Floki is a religious zealot who believes in the Gods above anything and everything, including Ragnar.",
     "actorName": "Gustaf Skarsgård",
@@ -107,6 +114,7 @@
     "id": "halfdan-the-black",
     "title": "Halfdan the Black",
     "subtitle": "Played by Jasper Pääkkönen",
+    "role": "secondary",
     "heroInfo": "King Harald’s violent, devoutly loyal younger brother.",
     "actorName": "Jasper Pääkkönen",
     "actorInfo":
@@ -121,6 +129,7 @@
     "id": "hvitserk",
     "title": "Hvitserk",
     "subtitle": "Played by Marco Ilsø",
+    "role": "main",
     "heroInfo":
       "Son of Ragnar. Hvitserk and his older brother Ubbe have a special bond because when they were children they jumped together in an icy lake and had to be rescued by Siggy, who died in the attempt. Hvitserk is more complex and a darker character than his brother Ubbe, characteristics which become more pronounced in time and lead to a terrible denouement.",
     "actorName": "Marco Ilsø",
@@ -136,6 +145,7 @@
     "id": "ivar-the-boneless",
     "title": "Ivar the Boneless",
     "subtitle": "Played by Alex Høgh Andersen",
+    "role": "main",
     "heroInfo":
       "Son of Ragnar. Perhaps the most famous Viking of all time, his pathological cruelty was notorious even during his own lifetime. Ivar is deeply ambitious and his ambitions will twist the legacy of his father out of shape, and create universal war. People are genuinely afraid of Ivar.",
     "actorName": "Alex Høgh Andersen",
@@ -151,6 +161,7 @@
     "id": "judith",
     "title": "Judith",
     "subtitle": "Played by Jennie Jacques",
+    "role": "secondary",
     "heroInfo":
       "Judith is the daughter of King Aelle and wife to Aethelwulf. Her infatuation with Athelstan became her downfall, and their affair led to the birth of the child Alfred, who King Ecbert believes to be a child of God. Judith and her son survived through the protection of King Ecbert, but his protection comes with a price.",
     "actorName": "Jennie Jacques",
@@ -166,6 +177,7 @@
     "id": "king-ecbert",
     "title": "King Ecbert",
     "subtitle": "Played by Linus Roache",
+    "role": "secondary",
     "heroInfo":
       "King Ecbert is the ruler of Wessex, the largest of the five kingdoms in England with big plans to make it even larger. Ecbert is a sophisticated visionary, well versed in court life. Ecbert has always anticipated that he must someday face the Vikings and is prepared with strategies as to how they can be used to his advantage.",
     "actorName": "Linus Roache",
@@ -181,6 +193,7 @@
     "id": "king-harald-finehair",
     "title": "King Harald Finehair",
     "subtitle": "Played by Peter Franzén",
+    "role": "main",
     "heroInfo":
       "A complex character who seeks to be King of Norway and is a potential threat to Ragnar.",
     "actorName": "Peter Franzén",
@@ -196,6 +209,7 @@
     "id": "princess-gisla",
     "title": "Princess Gisla",
     "subtitle": "Played by Morgane Polanski",
+    "role": "secondary",
     "heroInfo":
       "The daughter of Emperor Charles and a beautiful, young woman of considerable courage and resolution. However, she is still a woman and therefore remains at the mercy of the powerful and calculating men around her. Much to her dismay, she is forced into an arranged marriage with Rollo, the new Duke of Normandy.",
     "actorName": "Morgane Polanski",
@@ -211,6 +225,7 @@
     "id": "queen-aslaug",
     "title": "Queen Aslaug",
     "subtitle": "Played by Alyssa Sutherland",
+    "role": "secondary",
     "heroInfo":
       "Aslaug is the clever and beautiful daughter of the famed dragon slayer Sigurd and shield-maiden Brunhilde. Aslaug promised Ragnar that she would provide him with the sons which the ancient Seer prophesized for him–and she delivered.",
     "actorName": "Alyssa Sutherland",
@@ -226,6 +241,7 @@
     "id": "rollo",
     "title": "Rollo",
     "subtitle": "Played by Clive Standen",
+    "role": "main",
     "heroInfo":
       "Rollo, Ragnar’s brother, is impulsive, wild, care-free and compulsive. Rollo is a fierce fighter who is often overshadowed by his brother. The relationship between Rollo and Ragnar is intense and always unpredictable. Rollo has become the Duke of Normandy after marrying Princess Gisla (the daughter of Emperor Charles) and is named defender of France from the Vikings.",
     "actorName": "Clive Standen",
@@ -241,6 +257,7 @@
     "id": "sigurd-snake-in-the-eye",
     "title": "Sigurd Snake in the Eye",
     "subtitle": "Played by David Lindström",
+    "role": "secondary",
     "heroInfo":
       "Son of Ragnar. Sigurd was born with astigmatism in one eye, in the shape of a snake or dragon. This flaw has a damaging psychological impact on him, making him feel different from his older brothers and more estranged from the family. He is a sensitive young man, growing up feeling that he has to provide himself.",
     "actorName": "David Lindström",
@@ -256,6 +273,7 @@
     "id": "ubbe",
     "title": "Ubbe",
     "subtitle": "Played by Jordan Patrick Smith",
+    "role": "main",
     "heroInfo":
       "The oldest son by Ragnar and Aslaug, he has a paternalistic attitude towards his younger brothers. Ubbe is a sensitive, thoughtful and attractive young man, in many ways the closest in outlook and instinct to his father Ragnar.",
     "actorName": "Jordan Patrick Smith",
@@ -271,6 +289,7 @@
     "id": "the-seer",
     "title": "The Seer",
     "subtitle": "Played by John Kavanagh",
+    "role": "secondary",
     "heroInfo":
       "The ancient seer is one of the most important figures in Viking life because the Vikings believe in fate and the Seers can read the runes and often translate the wishes of the gods",
     "actorName": "John Kavanagh",

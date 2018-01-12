@@ -30,7 +30,8 @@
 					"componentWillUpdate",
 					"render",
 					"shouldComponentUpdate",
-					"getInitialState"
+					"getInitialState",
+					"onFilterClick"
 				]
 			}
 		],

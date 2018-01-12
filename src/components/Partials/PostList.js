@@ -120,6 +120,7 @@ PostList.propTypes = {
 	limit: PropTypes.number,
 };
 
+// Posts being filtered before passing to props
 const mapStateToProps = state => ({
 	posts: Object.values(state.postsState.posts)
 		.filter(post => post.title.toLowerCase().includes(state.postsState.searchFilter.toLowerCase())),

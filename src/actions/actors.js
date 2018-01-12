@@ -24,6 +24,13 @@ export function actorsFetchDataSuccess(actors) {
 	};
 }
 
+export function actorsSetFilter(visibilityFilter) {
+	return {
+		type: types.ACTORS_SET_VISIBILITY_FILTER,
+		visibilityFilter,
+	};
+}
+
 export function actorsFetchData(url) {
 	return (dispatch) => {
 		dispatch(actorsIsLoading(true));

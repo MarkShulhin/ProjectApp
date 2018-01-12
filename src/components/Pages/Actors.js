@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { actorsFetchData } from '../../actions/actors';
+import { actorsFetchData, actorsSetFilter } from '../../actions/actors';
 import Cast from '../Partials/Cast';
+import FilterLink from '../Partials/FilterLink';
 import { apiPrefix } from '../../../server/config.json';
 import '../../css/actors.css';
 
@@ -12,12 +13,52 @@ class Actors extends Component {
 			this.props.fetchData(`${apiPrefix}/actors`);
 		}
 	}
+
+	getVisibleActors() {
+		const { actors, visibilityFilter } = this.props;
+		const actorsArr = Object.values(actors);
+		switch (visibilityFilter) {
+		case 'SHOW_ALL':
+			return actorsArr;
+		case 'SHOW_MAIN':
+			return actorsArr.filter(a => a.role === 'main');
+		case 'SHOW_SECONDARY':
+			return actorsArr.filter(a => a.role === 'secondary');
+		default: return null;
+		}
+	}
+
 	render() {
-		const { actors } = this.props;
+		const { setFilter } = this.props;
+		const visibleActors = this.getVisibleActors();
 		return (
 			<section class="actors-content">
 				<header class="actors-head">
 					<h1 class="actors-label">Actors</h1>
+					<p>
+						Show:
+						{' '}
+						<FilterLink
+							filter="SHOW_ALL"
+							onClick={setFilter}
+						>
+							All
+						</FilterLink>
+						{' '}
+						<FilterLink
+							filter="SHOW_MAIN"
+							onClick={setFilter}
+						>
+							Main
+						</FilterLink>
+						{' '}
+						<FilterLink
+							filter="SHOW_SECONDARY"
+							onClick={setFilter}
+						>
+							Secondary
+						</FilterLink>
+					</p>
 				</header>
 				{
 					this.props.hasErrored ?
@@ -33,7 +74,7 @@ class Actors extends Component {
 						</div>
 						: null
 				}
-				<Cast actors={actors} />
+				<Cast actors={visibleActors} />
 			</section>
 		);
 	}
@@ -44,16 +85,20 @@ Actors.propTypes = {
 	hasErrored: PropTypes.bool,
 	isLoading: PropTypes.bool,
 	actors: PropTypes.any,
+	setFilter: PropTypes.func,
+	visibilityFilter: PropTypes.string,
 };
 
 const mapStateToProps = state => ({
 	actors: state.actorsState.actors,
 	hasErrored: state.actorsState.hasErrored,
 	isLoading: state.actorsState.isLoading,
+	visibilityFilter: state.actorsState.visibilityFilter,
 });
 
 const mapDispatchToProps = dispatch => ({
 	fetchData: url => dispatch(actorsFetchData(url)),
+	setFilter: filter => dispatch(actorsSetFilter(filter)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Actors);

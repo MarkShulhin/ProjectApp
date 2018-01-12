@@ -4,6 +4,7 @@ const initialState = {
 	actors: [],
 	hasErrored: false,
 	isLoading: false,
+	visibilityFilter: 'SHOW_ALL',
 };
 
 const actorsReducer = function reducer(state = initialState, action) {
@@ -24,6 +25,12 @@ const actorsReducer = function reducer(state = initialState, action) {
 		return {
 			...state,
 			actors: action.actors,
+		};
+
+	case types.ACTORS_SET_VISIBILITY_FILTER:
+		return {
+			...state,
+			visibilityFilter: action.visibilityFilter,
 		};
 
 	default:

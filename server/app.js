@@ -29,7 +29,6 @@ app.get('/actors', (req, res) => {
 	res.send(actors);
 });
 
-
-const server = app.listen(serverPort, () => {
+app.listen(serverPort, () => {
 	console.log(`Server is up and running on port ${serverPort}`);
 });
