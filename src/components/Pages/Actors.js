@@ -29,17 +29,18 @@ class Actors extends Component {
 	}
 
 	render() {
-		const { setFilter } = this.props;
+		const { setFilter, visibilityFilter } = this.props;
 		const visibleActors = this.getVisibleActors();
 		return (
 			<section class="actors-content">
 				<header class="actors-head">
 					<h1 class="actors-label">Actors</h1>
-					<p>
+					<div class="filter-block">
 						Show:
 						{' '}
 						<FilterLink
 							filter="SHOW_ALL"
+							currentFilter={visibilityFilter}
 							onClick={setFilter}
 						>
 							All
@@ -47,6 +48,7 @@ class Actors extends Component {
 						{' '}
 						<FilterLink
 							filter="SHOW_MAIN"
+							currentFilter={visibilityFilter}
 							onClick={setFilter}
 						>
 							Main
@@ -54,11 +56,12 @@ class Actors extends Component {
 						{' '}
 						<FilterLink
 							filter="SHOW_SECONDARY"
+							currentFilter={visibilityFilter}
 							onClick={setFilter}
 						>
 							Secondary
 						</FilterLink>
-					</p>
+					</div>
 				</header>
 				{
 					this.props.hasErrored ?
