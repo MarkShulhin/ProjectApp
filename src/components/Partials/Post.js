@@ -4,6 +4,7 @@ import { PropTypes } from 'prop-types';
 import { Link } from 'react-router-dom';
 import { postsFetchData } from '../../actions/posts';
 import { apiPrefix } from '../../../server/config.json';
+import BreadCrumbs from './BreadCrumbs';
 import '../../css/loader.css';
 import '../../css/post.css';
 
@@ -32,6 +33,7 @@ class Post extends Component {
 		return (
 			<div class="post-wrapper">
 				<main class="post">
+					<BreadCrumbs />
 					<Link to='/' class="post-arrow">
 						<img src="../img/slider-left-arrow.svg"/>
 						<span>Back to main</span>

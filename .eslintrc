@@ -10,7 +10,7 @@
 		"document": false
 	},
 	"rules": {
-		"linebreak-style": ["error", "windows"],
+		"linebreak-style": ["error", "unix"],
 		"indent": [2, "tab"],
 		"max-len": [1, 100, 2,
 			{
@@ -19,22 +19,7 @@
 			}],
 		"no-tabs": 0,
 		"react/prop-types": [2],
-		"class-methods-use-this": [2,
-			{
-				"exceptMethods": [
-					"componentDidMount",
-					"componentDidUpdate",
-					"componentWillMount",
-					"componentWillReceiveProps",
-					"componentWillUnmount",
-					"componentWillUpdate",
-					"render",
-					"shouldComponentUpdate",
-					"getInitialState",
-					"onFilterClick"
-				]
-			}
-		],
+		"class-methods-use-this": [0],
 		"react/jsx-uses-react": "error",
 		"react/jsx-uses-vars": "error"
 	}

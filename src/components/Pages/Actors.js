@@ -4,6 +4,7 @@ import { PropTypes } from 'prop-types';
 import { actorsFetchData, actorsSetFilter } from '../../actions/actors';
 import Cast from '../Partials/Cast';
 import FilterLink from '../Partials/FilterLink';
+import BreadCrumbs from '../Partials/BreadCrumbs';
 import { apiPrefix } from '../../../server/config.json';
 import '../../css/actors.css';
 
@@ -34,6 +35,7 @@ class Actors extends Component {
 		return (
 			<section class="actors-content">
 				<header class="actors-head">
+					<BreadCrumbs />
 					<h1 class="actors-label">Actors</h1>
 					<div class="filter-block">
 						Show:

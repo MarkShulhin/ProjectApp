@@ -254,6 +254,23 @@ body {
 }
 
 .notFound-link {
+  color:#000;
+}
+
+/* Breadcrumbs */
+.breadcrumbs-list {
+  display: flex;
+  list-style-type: none;
+  padding:0;
+}
+
+.breadcrumbs-list li {
+  padding-left: 3px;
+  text-transform: capitalize;
+}
+
+.breadcrumbs-list li a {
+  color:#e55b2b;
 }
 
 /* media queries */

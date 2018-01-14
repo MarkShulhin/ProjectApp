@@ -12,6 +12,15 @@
   margin-bottom: 20px;
 }
 
+.filter-block {
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+.filter-block a {
+  color:#e55b2b;
+}
+
 .actors-label {
   text-transform: uppercase;
   font-size: 1.313em;

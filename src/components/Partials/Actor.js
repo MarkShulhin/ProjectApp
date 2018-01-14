@@ -4,6 +4,7 @@ import { PropTypes } from 'prop-types';
 import { actorsFetchData } from '../../actions/actors';
 import { apiPrefix } from '../../../server/config.json';
 import Cast from './Cast';
+import BreadCrumbs from './BreadCrumbs';
 
 class Actor extends Component {
 	componentDidMount() {
@@ -14,10 +15,16 @@ class Actor extends Component {
 			}, 1000);
 		}
 	}
-	componentDidUpdate() {
+
+	componentWillMount() {
 		// Scroll to top when navigating from 'More cast' links.
 		window.scrollTo(0, 0);
 	}
+
+	componentDidUpdate() {
+		window.scrollTo(0, 0);
+	}
+
 	// Filter the actors list that current actor isn`t in the list.
 	getMoreCast() {
 		const { hero } = this.props.match.params;
@@ -57,6 +64,7 @@ class Actor extends Component {
 		return (
 			<div className="main-container">
 				<section class="actors-content">
+					<BreadCrumbs />
 					<header class="actors-head">
 						<h1 class="actors-label">Cast</h1>
 					</header>
