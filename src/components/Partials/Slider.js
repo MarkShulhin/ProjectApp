@@ -1,34 +1,31 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
 import Slide from './Slide';
 import Dots from './Dots';
 import Autoplay from './Autoplay';
 import SliderLeftArrow from './SliderLeftArrow';
 import SliderRightArrow from './SliderRightArrow';
+import {
+	sliderFetchImages,
+	sliderToggleAutoplay,
+	sliderGoToNextSlide,
+	sliderGoToPrevSlide,
+	sliderDotClick,
+	sliderToggleInterval,
+} from '../../actions/slider';
 import { apiPrefix } from '../../../server/config.json';
 import '../../css/slider.css';
 
-export default class Slider extends Component {
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			images: [],
-			index: 0,
-			translateValue: 0,
-			autoplay: false,
-		};
-	}
-
+export class Slider extends Component {
 	componentDidMount = () => {
-		axios.get(`${apiPrefix}/images`)
-			.then((res) => {
-				this.setState({ images: res.data });
-			});
+		if (this.props.images.length === 0) {
+			this.props.fetchData(`${apiPrefix}/images`);
+		}
 	}
 
 	renderSlides = () => {
-		const { images } = this.state;
+		const { images } = this.props;
 		const slides = [];
 
 		for (let i = 0; i < images.length; i += 1) {
@@ -38,44 +35,47 @@ export default class Slider extends Component {
 		return slides;
 	}
 
-	handleDotClick = (i) => {
-		if (i === this.state.index) {
-			return;
-		}
-
-		if (i > this.state.index) {
-			this.setState({
-				index: i,
-				translateValue: -(i * this.slideWidth()),
-			});
-		}
-		this.setState({
-			index: i,
-			translateValue: this.state.translateValue += ((this.state.index - i) * (this.slideWidth())),
-		});
+	slideWidth = () => {
+		const slide = document.querySelector('.slide');
+		return slide.clientWidth;
 	}
 
-	toggleAutoplay = () => this.setState({ autoplay: !this.state.autoplay })
-
-	componentDidUpdate = (prevProps, prevState) => {
-		const { autoplay } = this.state;
-
-		if (autoplay && prevState.autoplay !== autoplay) {
+	componentDidUpdate = (prevProps) => {
+		const {
+			autoplay,
+			goToNextSlide,
+			toggleInterval,
+			interval,
+		} = this.props;
+		if (autoplay && prevProps.autoplay !== autoplay) {
 			const x = window.setInterval(() => {
-				this.goToNextSlide();
+				const {
+					index,
+					images,
+					translateValue,
+				} = this.props;
+				goToNextSlide({
+					index,
+					images,
+					translateValue,
+					slideWidth: this.slideWidth(),
+				});
 			}, 5000);
 
-			this.setState({ interval: x });
-		} else if (!autoplay && prevState.autoplay !== autoplay) {
-			const x = window.clearInterval(this.state.interval);
-			this.setState({ interval: x });
+			toggleInterval(x);
+		} else if (!autoplay && prevProps.autoplay !== autoplay) {
+			const x = window.clearInterval(interval);
+			toggleInterval(x);
 		}
 	}
 
 	render() {
 		const {
 			images, index, translateValue, autoplay,
-		} = this.state;
+			goToPreviousSlide, goToNextSlide,
+			handleDotClick, toggleAutoplay,
+		} = this.props;
+		const slides = this.renderSlides();
 		return (
 			<div className="slider">
 				<div className="slider-wrapper"
@@ -83,51 +83,114 @@ export default class Slider extends Component {
 						transform: `translateX(${translateValue}px)`,
 						transition: 'transform ease-out 0.45s',
 					}}>
-					{ this.renderSlides() }
+					{ slides }
 				</div>
 
-				<Autoplay toggle={this.toggleAutoplay} autoplay={autoplay} />
+				<Autoplay toggle={() => toggleAutoplay()}
+					autoplay={autoplay}
+				/>
 
 				<Dots
 					index={index}
+					slideWidth={this.slideWidth}
 					quantity={images.length}
-					dotClick={this.handleDotClick} />
+					translateValue={translateValue}
+					dotClick={handleDotClick} />
 
-				<SliderLeftArrow prevSlide={this.goToPreviousSlide} />
-				<SliderRightArrow nextSlide={this.goToNextSlide} />
+				<SliderLeftArrow prevSlide={
+					() => goToPreviousSlide({
+						index,
+						translateValue,
+						slideWidth: this.slideWidth(),
+					})
+				} />
+				<SliderRightArrow nextSlide={
+					() => goToNextSlide({
+						index,
+						images,
+						translateValue,
+						slideWidth: this.slideWidth(),
+					})}
+				/>
 			</div>
 		);
 	}
+}
 
-	goToPreviousSlide = () => {
-		if (this.state.index === 0) {
+Slider.propTypes = {
+	images: PropTypes.array,
+	fetchData: PropTypes.func,
+	autoplay: PropTypes.bool,
+	goToNextSlide: PropTypes.func,
+	toggleAutoplay: PropTypes.func,
+	goToPreviousSlide: PropTypes.func,
+	handleDotClick: PropTypes.func,
+	toggleInterval: PropTypes.func,
+	interval: PropTypes.any,
+	index: PropTypes.number,
+	translateValue: PropTypes.number,
+};
+
+const mapStateToProps = state => ({
+	images: state.sliderState.images,
+	hasErrored: state.sliderState.hasErrored,
+	isLoading: state.sliderState.isLoading,
+	autoplay: state.sliderState.autoplay,
+	index: state.sliderState.index,
+	translateValue: state.sliderState.translateValue,
+	interval: state.sliderState.interval,
+});
+
+const mapDispatchToProps = dispatch => ({
+	fetchData: url => dispatch(sliderFetchImages(url)),
+	toggleAutoplay: () => dispatch(sliderToggleAutoplay()),
+	goToNextSlide: (payload) => {
+		const { images, slideWidth } = payload;
+		let { index, translateValue } = payload;
+
+		if (index === images.length - 1) {
+			return dispatch(sliderGoToNextSlide({
+				translateValue: 0,
+				index: 0,
+			}));
+		}
+
+		dispatch(sliderGoToNextSlide({
+			translateValue: translateValue -= slideWidth,
+			index: index += 1,
+		}));
+	},
+	goToPreviousSlide: (payload) => {
+		const { slideWidth } = payload;
+		let { index, translateValue } = payload;
+		if (index === 0) {
 			return;
 		}
 
-		this.setState({
-			translateValue: this.state.translateValue += this.slideWidth(),
-			index: this.state.index -= 1,
-		});
-	}
-
-	goToNextSlide = () => {
-		const { images } = this.state;
-
-		if (this.state.index === images.length - 1) {
-			return this.setState({
-				translateValue: 0,
-				index: 0,
-			});
+		dispatch(sliderGoToPrevSlide({
+			translateValue: translateValue += slideWidth,
+			index: index -= 1,
+		}));
+	},
+	handleDotClick: (payload) => {
+		const { slideWidth, i, index } = payload;
+		let { translateValue } = payload;
+		if (i === index) {
+			return;
 		}
+		if (i > index) {
+			dispatch(sliderDotClick({
+				index: i,
+				translateValue: -(i * slideWidth),
+			}));
+		} else {
+			dispatch(sliderDotClick({
+				index: i,
+				translateValue: translateValue += ((index - i) * slideWidth),
+			}));
+		}
+	},
+	toggleInterval: interval => dispatch(sliderToggleInterval(interval)),
+});
 
-		this.setState({
-			translateValue: this.state.translateValue -= this.slideWidth(),
-			index: this.state.index += 1,
-		});
-	}
-
-	slideWidth = () => {
-		const slide = document.querySelector('.slide');
-		return slide.clientWidth;
-	}
-}
+export default connect(mapStateToProps, mapDispatchToProps)(Slider);
