@@ -18,13 +18,27 @@ import { apiPrefix } from '../../../server/config.json';
 import '../../css/slider.css';
 
 export class Slider extends Component {
-	componentDidMount = () => {
+	componentDidMount() {
 		if (this.props.images.length === 0) {
 			this.props.fetchData(`${apiPrefix}/images`);
 		}
 	}
 
-	renderSlides = () => {
+	componentWillUnmount() {
+		if (this.props.autoplay) {
+			const {
+				toggleAutoplay,
+				interval,
+				toggleInterval,
+			} = this.props;
+
+			toggleAutoplay();
+			const x = window.clearInterval(interval);
+			toggleInterval(x);
+		}
+	}
+
+	renderSlides() {
 		const { images } = this.props;
 		const slides = [];
 
