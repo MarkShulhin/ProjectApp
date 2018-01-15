@@ -10,13 +10,13 @@ const initialState = {
 
 const postsReducer = function reducer(state = initialState, action) {
 	switch (action.type) {
-	case types.POSTS_HAS_ERRORED:
+	case types.POSTS_FETCH_DATA_REJECT:
 		return {
 			...state,
 			hasErrored: action.hasErrored,
 		};
 
-	case types.POSTS_IS_LOADING:
+	case types.POSTS_FETCH_DATA_REQUEST:
 		return {
 			...state,
 			isLoading: action.isLoading,

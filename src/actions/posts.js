@@ -3,14 +3,14 @@ import * as types from './action-types';
 
 export function postsHasErrored(bool) {
 	return {
-		type: types.POSTS_HAS_ERRORED,
+		type: types.POSTS_FETCH_DATA_REJECT,
 		hasErrored: bool,
 	};
 }
 
 export function postsIsLoading(bool) {
 	return {
-		type: types.POSTS_IS_LOADING,
+		type: types.POSTS_FETCH_DATA_REQUEST,
 		isLoading: bool,
 	};
 }

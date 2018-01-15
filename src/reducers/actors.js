@@ -9,13 +9,13 @@ const initialState = {
 
 const actorsReducer = function reducer(state = initialState, action) {
 	switch (action.type) {
-	case types.ACTORS_HAS_ERRORED:
+	case types.ACTORS_FETCH_DATA_REJECT:
 		return {
 			...state,
 			hasErrored: action.hasErrored,
 		};
 
-	case types.ACTORS_IS_LOADING:
+	case types.ACTORS_FETCH_DATA_REQUEST:
 		return {
 			...state,
 			isLoading: action.isLoading,

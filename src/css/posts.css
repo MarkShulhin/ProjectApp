@@ -29,7 +29,7 @@
   flex-wrap: wrap;
   align-items: top;
   padding: 5% 0 2.5% 5%;
-  max-height: 600px;
+  max-height: 62.5vh;
   overflow-y: auto;
 }
 .posts__item {

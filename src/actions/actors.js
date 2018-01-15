@@ -5,14 +5,14 @@ import * as types from './action-types';
 // Action creators
 export function actorsHasErrored(bool) {
 	return {
-		type: types.ACTORS_HAS_ERRORED,
+		type: types.ACTORS_FETCH_DATA_REJECT,
 		hasErrored: bool,
 	};
 }
 
 export function actorsIsLoading(bool) {
 	return {
-		type: types.ACTORS_IS_LOADING,
+		type: types.ACTORS_FETCH_DATA_REQUEST,
 		isLoading: bool,
 	};
 }

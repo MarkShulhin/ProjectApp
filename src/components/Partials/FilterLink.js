@@ -21,7 +21,7 @@ const FilterLink = ({
 			{ children }
 		</a>
 	);
-}
+};
 
 FilterLink.propTypes = {
 	filter: PropTypes.string,
