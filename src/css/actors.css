@@ -1,14 +1,14 @@
-.actors-content {
+.main-content {
   display: block;
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   font-weight: 400;
-  margin: 60px auto;
+  margin: 20px auto;
   width: 100%;
   max-width: 1100px;
 }
 
-.actors-head {
+.section-head {
   margin-bottom: 20px;
 }
 
@@ -21,7 +21,7 @@
   color:#e55b2b;
 }
 
-.actors-label {
+.section-label {
   text-transform: uppercase;
   font-size: 1.313em;
   margin: 0;
@@ -120,24 +120,24 @@ img.responsive-img {
   width: 100%;
 }
 
-.main-article .section-title {
+.main-article .article-title {
   margin-bottom: 20px;
   font-size: 1.313em;
 }
-.main-article .section-title h1 {
+.main-article .article-title h1 {
   font-size: 100%;
   margin: 0;
   padding: 0;
 }
 
-.main-article .section-title strong {
+.main-article .article-title strong {
   text-transform: uppercase;
   vertical-align: middle;
   font-weight: 600;
   font-size: 100%;
 }
 
-.main-article .section-title small {
+.main-article .article-title small {
   margin-left: 5px;
   font-size: 0.762em;
   vertical-align: bottom;
@@ -165,7 +165,7 @@ img.responsive-img {
   .article-container {
     margin: 0 10px;
   }
-  .actors-content {
+  .main-content {
     width: 95%;
     margin: 20px auto;
     font-size: 14px;

@@ -33,10 +33,10 @@ class Actors extends Component {
 		const { setFilter, visibilityFilter } = this.props;
 		const visibleActors = this.getVisibleActors();
 		return (
-			<section class="actors-content">
-				<header class="actors-head">
+			<section class="main-content">
+				<header class="section-head">
 					<BreadCrumbs />
-					<h1 class="actors-label">Actors</h1>
+					<h1 class="section-label">Actors</h1>
 					<div class="filter-block">
 						Show:
 						{' '}

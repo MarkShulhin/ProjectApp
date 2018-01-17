@@ -18,6 +18,7 @@ export class NavBar extends Component {
 					<li class="nav-item"><Link to="/">Home</Link></li>
 					<li class="nav-item"><Link to="/actors">Actors</Link></li>
 					<li class="nav-item"><Link to="/videos">Videos</Link></li>
+					<li class="nav-item"><Link to="/music">Music</Link></li>
 					<li class="nav-item"><Link to="/contacts">Contacts</Link></li>
 				</ul>
 			</nav>

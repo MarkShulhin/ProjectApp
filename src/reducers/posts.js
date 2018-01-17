@@ -1,7 +1,7 @@
 import * as types from '../actions/action-types';
 
 const initialState = {
-	posts: [],
+	posts: {},
 	hasErrored: false,
 	isLoading: false,
 	limit: 10,

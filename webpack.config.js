@@ -1,20 +1,13 @@
 const debug = process.env.NODE_ENV !== 'production';
 const webpack = require('webpack');
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 	context: path.join(__dirname, 'src'),
 	devtool: debug ? 'inline-sourcemap' : false,
-	entry: './index.js',
+	entry: ['babel-polyfill', './index.js'],
 	plugins: [
 		new webpack.NoEmitOnErrorsPlugin(),
-		new HtmlWebpackPlugin({
-			template: './index.html',
-			favicon: './img/favicon.ico',
-			filename: 'index.html',
-			inject: 'body',
-		}),
 	],
 	module: {
 		loaders: [
@@ -24,7 +17,8 @@ module.exports = {
 				loader: 'babel-loader',
 				query: {
 					presets: ['react', 'env'],
-					plugins: ['react-html-attrs', 'transform-decorators-legacy', 'transform-class-properties', 'transform-object-rest-spread'],
+					plugins: ['react-html-attrs', 'transform-decorators-legacy', 'transform-class-properties', 'transform-object-rest-spread',
+					],
 				},
 			},
 			{

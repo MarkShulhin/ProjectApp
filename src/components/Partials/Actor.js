@@ -63,17 +63,17 @@ class Actor extends Component {
 		} = actor;
 		return (
 			<div className="main-container">
-				<section class="actors-content">
+				<section class="main-content">
 					<BreadCrumbs />
-					<header class="actors-head">
-						<h1 class="actors-label">Cast</h1>
+					<header class="section-head">
+						<h1 class="section-label">Cast</h1>
 					</header>
 					<div class="article-container">
 						<figure class="item-img-container">
 							<img class="responsive-img" src={poster} alt={alt} />
 						</figure>
 						<article class="main-article">
-							<header class="section-title">
+							<header class="article-title">
 								<h1>
 									<strong>{title}</strong>
 									<small>{subtitle}</small>
@@ -94,9 +94,9 @@ class Actor extends Component {
 
 				</section>
 				<div class="extra-wrapper"></div>
-				<section class="actors-content">
-					<header class="actors-head">
-						<h1 class="actors-label">More Cast</h1>
+				<section class="main-content">
+					<header class="section-head">
+						<h1 class="section-label">More Cast</h1>
 					</header>
 					<Cast actors={moreCast} />
 				</section>

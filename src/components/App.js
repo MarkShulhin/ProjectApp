@@ -10,7 +10,9 @@ import Contacts from './Pages/Contacts';
 import NotFound from './Pages/NotFound';
 import Post from './Partials/Post';
 import Actor from './Partials/Actor';
-/* Styles */
+import Videos from './Pages/Videos';
+import Music from './Pages/Music';
+/* Global Styles */
 import '../css/style.css';
 
 export default class App extends Component {
@@ -24,6 +26,8 @@ export default class App extends Component {
 						<Route exact path="/posts" component={Home} />
 						<Route path="/posts/:id" component={Post} />
 						<Route path='/contacts' component={Contacts} />
+						<Route path='/music' component={Music} />
+						<Route path='/videos' component={Videos} />
 						<Route path='/actors/:hero' component={Actor} />
 						<Route path='/actors' component={Actors} />
 						<Route path='*' component={NotFound}/>

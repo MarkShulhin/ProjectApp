@@ -116,7 +116,7 @@ PostList.propTypes = {
 	searchPosts: PropTypes.func,
 	hasErrored: PropTypes.bool,
 	isLoading: PropTypes.bool,
-	posts: PropTypes.any,
+	posts: PropTypes.array,
 	limit: PropTypes.number,
 };
 
