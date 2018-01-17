@@ -1,105 +1,52 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
+import { musicFetchData, musicSetActiveIndex } from '../../actions/music';
+import { apiPrefix } from '../../../server/config.json';
 import AudioBubble from '../Partials/AudioBubble';
+import BreadCrumbs from '../Partials/BreadCrumbs';
 import '../../css/music.css';
 
-export default class Music extends Component {
-	constructor(props) {
-		super(props);
-		this.state = { activeIndex: null };
+export class Music extends Component {
+	componentDidMount() {
+		if (this.props.songs.length === 0) {
+			this.props.fetchData(`${apiPrefix}/songs`);
+		}
 	}
+
 	onComplete() {
-		this.setState({
-			activeIndex: null,
-		});
+		this.props.setIndex(null);
 	}
+
 	setActive(i) {
-		const index = i === this.state.activeIndex ? null : i;
-		this.setState({
-			activeIndex: index,
-		});
+		const index = i === this.props.activeIndex ? null : i;
+		this.props.setIndex(index);
 	}
+
 	render() {
-		const AUDIO = [
-			{
-				title: 'Solringen',
-				subtitle: 'Wardruna',
-				image: '/img/album-cover.jpg',
-				audio: '/assets/music/solringen.mp3',
-			},
-			{
-				title: 'Sowelu',
-				subtitle: 'Wardruna',
-				image: '/img/album-cover.jpg',
-				audio: '/assets/music/sowelu.mp3',
-			},
-			{
-				title: 'Fehu',
-				subtitle: 'Wardruna',
-				image: '/img/album-cover1.jpg',
-				audio: '/assets/music/Fehu.mp3',
-			},
-			{
-				title: 'Bjarkan',
-				subtitle: 'Wardruna',
-				image: '/img/album-cover2.jpg',
-				audio: '/assets/music/Bjarkan.mp3',
-			},
-			{
-				title: 'Dagr',
-				subtitle: 'Wardruna',
-				image: '/img/album-cover1.jpg',
-				audio: '/assets/music/Dagr.mp3',
-			},
-			{
-				title: 'Odal',
-				subtitle: 'Wardruna',
-				image: '/img/album-cover2.jpg',
-				audio: '/assets/music/Odal.mp3',
-			},
-			{
-				title: 'Drivande',
-				subtitle: 'Wardruna',
-				image: '/img/album-cover2.jpg',
-				audio: '/assets/music/drivande.mp3',
-			},
-			{
-				title: 'Ehwar',
-				subtitle: 'Wardruna',
-				image: '/img/album-cover2.jpg',
-				audio: '/assets/music/ehwar.mp3',
-			},
-			{
-				title: 'Hagal',
-				subtitle: 'Wardruna',
-				image: '/img/album-cover2.jpg',
-				audio: '/assets/music/hagal.mp3',
-			},
-			{
-				title: 'Heimta thurs',
-				subtitle: 'Wardruna',
-				image: '/img/album-cover.jpg',
-				audio: '/assets/music/heimta-thurs.mp3',
-			},
-			{
-				title: 'Kauna',
-				subtitle: 'Wardruna',
-				image: '/img/album-cover.jpg',
-				audio: '/assets/music/Kauna.mp3',
-			},
-			{
-				title: 'Loyndomsriss',
-				subtitle: 'Wardruna',
-				image: '/img/album-cover1.jpg',
-				audio: '/assets/music/loyndomsriss.mp3',
-			},
-		];
+		const { songs, activeIndex } = this.props;
 		return (
 			<div className="player">
+				<BreadCrumbs />
 				<h1 className="player__title">Songs from episodes</h1>
+				{
+					this.props.hasErrored ?
+						<p>Sorry! There was an error loading the actors</p>
+						: null}
+				{
+					this.props.isLoading ?
+						<div class="sk-folding-cube">
+							<div class="sk-cube1 sk-cube"></div>
+							<div class="sk-cube2 sk-cube"></div>
+							<div class="sk-cube4 sk-cube"></div>
+							<div class="sk-cube3 sk-cube"></div>
+						</div>
+						: null
+				}
 				<div className="player__items">
-					{AUDIO.map((audio, i) =>
+					{songs.map((audio, i) =>
 						<AudioBubble
-							active={this.state.activeIndex === i}
+							active={activeIndex === i}
 							key={audio.title}
 							title={audio.title}
 							subtitle={audio.subtitle}
@@ -113,3 +60,26 @@ export default class Music extends Component {
 		);
 	}
 }
+
+Music.propTypes = {
+	fetchData: PropTypes.func,
+	setIndex: PropTypes.func,
+	hasErrored: PropTypes.bool,
+	isLoading: PropTypes.bool,
+	songs: PropTypes.any,
+	activeIndex: PropTypes.number,
+};
+
+const mapStateToProps = state => ({
+	songs: state.musicState.songs,
+	hasErrored: state.musicState.hasErrored,
+	isLoading: state.musicState.isLoading,
+	activeIndex: state.musicState.activeIndex,
+});
+
+const mapDispatchToProps = dispatch => ({
+	fetchData: url => dispatch(musicFetchData(url)),
+	setIndex: index => dispatch(musicSetActiveIndex(index)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Music);

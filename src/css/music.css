@@ -8,8 +8,8 @@ img {
     background: -webkit-linear-gradient(top, #cedce7 0%,#596a72 100%);
     background: linear-gradient(to bottom, #cedce7 0%,#596a72 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedce7', endColorstr='#596a72',GradientType=0 );
-    height: 88.7vh;
-    max-height: 88.7vh;
+    height: 89vh;
+    max-height: 89vh;
     overflow-y: auto;
     position: relative;
     font-family: 'Roboto', sans-serif;
@@ -23,7 +23,7 @@ img {
     margin-bottom: 5rem;
   }
   .player__items {
-    width: 100%;
+    width: 95%;
     height: auto;
     margin: 0 auto;
     display: flex;

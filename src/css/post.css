@@ -44,6 +44,10 @@
   padding: 16px;
   background-color: #333;
 }
+
+.post-aside h3 {
+  color: White;
+}
 .post-aside ul {
   list-style: none;
   padding: 0;

@@ -5,6 +5,7 @@ import postsReducer from './posts';
 import actorsReducer from './actors';
 import navBarReducer from './navbar';
 import sliderReducer from './slider';
+import musicReducer from './music';
 
 //	Combine reducers
 const reducers = combineReducers({
@@ -12,6 +13,7 @@ const reducers = combineReducers({
 	actorsState: actorsReducer,
 	navState: navBarReducer,
 	sliderState: sliderReducer,
+	musicState: musicReducer,
 });
 
 export default reducers;

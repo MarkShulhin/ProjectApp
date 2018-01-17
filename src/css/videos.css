@@ -1,8 +1,7 @@
 .videos-section {
     display: flex;
+    
 }
-
-
 
 .sidebar {
     width: 33.33%;
@@ -67,12 +66,6 @@
     margin-bottom: 5px;
 }
 
-
-
-
-
-
-
 .main-video {
     width: 66.666667%;
 }
@@ -110,4 +103,19 @@
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
+}
+
+@media screen and (max-width: 768px) {
+    .videos-section {
+        flex-wrap: wrap;
+    }
+
+    .main-video {
+        width: 100%;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 15px;
+    }
 }

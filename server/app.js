@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import posts from '../src/assets/posts.json';
 import images from '../src/assets/images.json';
 import actors from '../src/assets/actors.json';
+import songs from '../src/assets/songs.json';
 import { serverPort } from './config.json';
 
 // Initialization of express application
@@ -27,6 +28,10 @@ app.get('/images', (req, res) => {
 
 app.get('/actors', (req, res) => {
 	res.send(actors);
+});
+
+app.get('/songs', (req, res) => {
+	res.send(songs);
 });
 
 app.listen(serverPort, () => {

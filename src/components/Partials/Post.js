@@ -52,7 +52,7 @@ class Post extends Component {
 					<p>Author: {post.author}</p>
 				</main>
 				<aside class="post-aside">
-					<h5>Top stories</h5>
+					<h3>Top stories</h3>
 					<ul>
 						<li>
 							<a href="#">Your Company’s Culture is Who You Hire, Fire, and Promote</a>
