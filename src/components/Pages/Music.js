@@ -14,6 +14,10 @@ export class Music extends Component {
 		}
 	}
 
+	componentWillUnmount() {
+		this.props.setIndex(null);
+	}
+
 	onComplete() {
 		this.props.setIndex(null);
 	}

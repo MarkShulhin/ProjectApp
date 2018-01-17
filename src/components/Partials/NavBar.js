@@ -15,11 +15,31 @@ export class NavBar extends Component {
 					onClick={() => { toggleMenu(); }}
 				><i></i></div>
 				<ul class="flex-nav">
-					<li class="nav-item"><Link to="/">Home</Link></li>
-					<li class="nav-item"><Link to="/actors">Actors</Link></li>
-					<li class="nav-item"><Link to="/videos">Videos</Link></li>
-					<li class="nav-item"><Link to="/music">Music</Link></li>
-					<li class="nav-item"><Link to="/contacts">Contacts</Link></li>
+					<li class="nav-item">
+						<Link to="/"
+							onClick={() => { toggleMenu(); }}
+						>Home</Link>
+					</li>
+					<li class="nav-item">
+						<Link to="/actors"
+							onClick={() => { toggleMenu(); }}
+						>Actors</Link>
+					</li>
+					<li class="nav-item">
+						<Link to="/videos"
+							onClick={() => { toggleMenu(); }}
+						>Videos</Link>
+					</li>
+					<li class="nav-item">
+						<Link to="/music"
+							onClick={() => { toggleMenu(); }}
+						>Music</Link>
+					</li>
+					<li class="nav-item">
+						<Link to="/contacts"
+							onClick={() => { toggleMenu(); }}
+						>Contacts</Link>
+					</li>
 				</ul>
 			</nav>
 		);

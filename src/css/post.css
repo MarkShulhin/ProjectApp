@@ -38,6 +38,7 @@
 .post-body {
   font-family: "Bellefair", serif;
   font-weight: 400;
+  padding-top: 20px;
 }
 .post-aside {
   flex-basis: 30%;
@@ -72,6 +73,7 @@
     padding: 15px;
     font-size: 20px;
   }
+
   .post-poster {
     height: auto;
   }

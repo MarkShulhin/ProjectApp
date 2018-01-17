@@ -37,12 +37,17 @@ export default class AudioBubble extends Component {
 		}
 	}
 	updateProgressBar() {
-		const { currentTime } = this.$audio;
-		const percentage = (currentTime / this.duration);
-		const strokeDashoffset = percentage * this.pathLength;
-		this.setState({
-			strokeDashoffset: (this.pathLength - strokeDashoffset),
-		});
+		try {
+			const { currentTime } = this.$audio;
+			const percentage = (currentTime / this.duration);
+			const strokeDashoffset = percentage * this.pathLength;
+			this.setState({
+				strokeDashoffset: (this.pathLength - strokeDashoffset),
+			});
+		} catch (error) {
+			// music stopped
+		}
+
 	}
 	handleClick() {
 		this.props.setActive();

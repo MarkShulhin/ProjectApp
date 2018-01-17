@@ -15,25 +15,25 @@
     "title": "Fehu",
     "subtitle": "Wardruna",
     "image": "/img/album-cover1.jpg",
-    "audio": "/assets/music/Fehu.mp3"
+    "audio": "/assets/music/fehu.mp3"
   },
   {
     "title": "Bjarkan",
     "subtitle": "Wardruna",
     "image": "/img/album-cover2.jpg",
-    "audio": "/assets/music/Bjarkan.mp3"
+    "audio": "/assets/music/bjarkan.mp3"
   },
   {
     "title": "Dagr",
     "subtitle": "Wardruna",
     "image": "/img/album-cover1.jpg",
-    "audio": "/assets/music/Dagr.mp3"
+    "audio": "/assets/music/dagr.mp3"
   },
   {
     "title": "Odal",
     "subtitle": "Wardruna",
     "image": "/img/album-cover2.jpg",
-    "audio": "/assets/music/Odal.mp3"
+    "audio": "/assets/music/odal.mp3"
   },
   {
     "title": "Drivande",
@@ -63,7 +63,7 @@
     "title": "Kauna",
     "subtitle": "Wardruna",
     "image": "/img/album-cover.jpg",
-    "audio": "/assets/music/Kauna.mp3"
+    "audio": "/assets/music/kauna.mp3"
   },
   {
     "title": "Loyndomsriss",
