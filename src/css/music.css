@@ -13,6 +13,7 @@ img {
     overflow-y: auto;
     position: relative;
     font-family: 'Roboto', sans-serif;
+    -webkit-overflow-scrolling: touch;
   }
   .player__title {
     font-size: 2em;
@@ -50,8 +51,11 @@ img {
     padding: 0;
     position: relative;
   }
+
+
   .audio-bubble__image {
     border-radius: 50%;
+    width: 100%; 
     transition: opacity 0.4s ease;
   }
   .audio-bubble:not(.audio-bubble--active):hover .audio-bubble__image {

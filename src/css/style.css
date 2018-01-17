@@ -71,6 +71,7 @@ body {
   flex: 1;
   text-align: center;
   color: inherit;
+  position: relative;
   transition: all 0.2s ease;
 }
 
@@ -88,6 +89,35 @@ body {
   padding: 20px 0;
   color: inherit;
   text-decoration: none;
+}
+
+.flex-nav .nav-item .submenu {
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 35px;
+  visibility: hidden;
+  z-index: 3;
+}
+.flex-nav .nav-item:hover .submenu {
+  opacity: 1;
+  top: 50px;	/* adjust this as per top nav padding top & bottom comes */
+  visibility: visible;
+  width: 200px;
+  list-style: none;
+  padding-left: 5px;
+}
+.flex-nav .nav-item .submenu li {
+  float: none;
+  width: 100%;
+}
+.flex-nav .nav-item .submenu a:hover {
+  background: #ee825e;
+  color: #fff;
+}
+.flex-nav .nav-item .submenu a {
+  background-color:#ec9375;
+  color: #333;
 }
 
 /* Hamburger Icon */
@@ -288,7 +318,6 @@ body {
 
   .flex-nav .nav-item {
     display: none;
-    height: 0;
     transition: height 1s ease;
     color: transparent;
     border-bottom: 2px solid #ecf0f1;
@@ -307,7 +336,6 @@ body {
 
   .menu.active .flex-nav .nav-item {
     display: block;
-    height: initial;
     color: inherit;
     background-color: rgba(51, 51, 51, 0.9);
     z-index: 2;
@@ -316,6 +344,33 @@ body {
   .menu.active .flex-nav .nav-item:hover {
     color: #e55b2b;
   }
+
+  .flex-nav .nav-item .submenu {
+    left: 0;
+    opacity: 1;
+    position: absolute;
+    top: 50px;
+    visibility: visible;
+    z-index: 3;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+  }
+
+  .flex-nav .nav-item .submenu li {
+    border-bottom: 2px solid #333;
+  }
+  .flex-nav .nav-item .submenu li:last-child {
+    border-bottom: none;
+  }
+  .flex-nav .nav-item:hover .submenu {
+    width:100%;
+    padding:0;
+  }
+
+.flex-nav .nav-item.sub {
+  height: 230px;
+}
 
   /* Footer */
 

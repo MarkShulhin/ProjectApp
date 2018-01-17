@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 
+// fix for the IE and mobile phones
+function getDashoffsetCircle(el) {
+	const length = 2 * Math.PI * el.getAttribute('r');
+	return length;
+}
+
 export default class AudioBubble extends Component {
 	constructor(props) {
 		super();
@@ -12,7 +18,7 @@ export default class AudioBubble extends Component {
 		this.$audio.addEventListener('loadedmetadata', () => {
 			this.duration = this.$audio.duration;
 		});
-		this.pathLength = this.$progress.getTotalLength();
+		this.pathLength = getDashoffsetCircle(this.$progress);
 		this.setState({
 			strokeDashoffset: this.pathLength,
 		});
@@ -47,7 +53,6 @@ export default class AudioBubble extends Component {
 		} catch (error) {
 			// music stopped
 		}
-
 	}
 	handleClick() {
 		this.props.setActive();
