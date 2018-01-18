@@ -50,6 +50,20 @@ class Post extends Component {
 						{post.fullBody}
 					</div>
 					<p>Author: {post.author}</p>
+					<div class="star-rating">
+                		<div class="star-rating__wrap">
+							<input class="star-rating__input" id={`star-rating-5${id}`} type="radio" name={`rating${id}`} value="5"/>
+							<label class="star-rating__ico fa fa-star-o fa-lg" for={`star-rating-5${id}`} title="Very nice"></label>
+							<input class="star-rating__input" id={`star-rating-4${id}`} type="radio" name={`rating${id}`} value="4"/>
+							<label class="star-rating__ico fa fa-star-o fa-lg" for={`star-rating-4${id}`} title="Good"></label>
+							<input class="star-rating__input" id={`star-rating-3${id}`} type="radio" name={`rating${id}`} value="3"/>
+							<label class="star-rating__ico fa fa-star-o fa-lg" for={`star-rating-3${id}`} title="Okay"></label>
+							<input class="star-rating__input" id={`star-rating-2${id}`} type="radio" name={`rating${id}`} value="2"/>
+							<label class="star-rating__ico fa fa-star-o fa-lg" for={`star-rating-2${id}`} title="Bad"></label>
+							<input class="star-rating__input" id={`star-rating-1${id}`} type="radio" name={`rating${id}`} value="1"/>
+							<label class="star-rating__ico fa fa-star-o fa-lg" for={`star-rating-1${id}`} title="Very bad"></label>
+						</div>
+					</div>
 				</main>
 				<aside class="post-aside">
 					<h3>Top stories</h3>

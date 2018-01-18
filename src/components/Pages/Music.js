@@ -35,7 +35,7 @@ export class Music extends Component {
 				<h1 className="player__title">Songs from episodes</h1>
 				{
 					this.props.hasErrored ?
-						<p>Sorry! There was an error loading the actors</p>
+						<p>Sorry! There was an error loading the songs</p>
 						: null}
 				{
 					this.props.isLoading ?
