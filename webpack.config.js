@@ -1,20 +1,30 @@
 const debug = process.env.NODE_ENV !== 'production';
 const webpack = require('webpack');
 const path = require('path');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
 	context: path.join(__dirname, 'src'),
 	devtool: debug ? 'inline-sourcemap' : false,
 	entry: ['babel-polyfill', './index.js'],
-	plugins: [
-		new webpack.NoEmitOnErrorsPlugin(),
-	],
+	plugins: debug ?
+		[
+			new ExtractTextPlugin('styles.css'),
+		] :
+		[
+			new webpack.NoEmitOnErrorsPlugin(),
+			new UglifyJsPlugin({
+				parallel: true,
+			}),
+			new ExtractTextPlugin('styles.css'),
+		],
 	module: {
 		loaders: [
 			{
 				test: /\.jsx?$/,
-				exclude: /(node_modules|bower_components)/,
 				loader: 'babel-loader',
+				exclude: /node_modules(?!\/webpack-dev-server)/,
 				query: {
 					presets: ['react', 'env'],
 					plugins: ['react-html-attrs', 'transform-decorators-legacy', 'transform-class-properties', 'transform-object-rest-spread',
@@ -23,9 +33,16 @@ module.exports = {
 			},
 			{
 				test: /\.css$/,
-				use: ['style-loader',
-					'css-loader',
-				],
+				use: ExtractTextPlugin.extract({
+					fallback: 'style-loader',
+					use: {
+						loader: 'css-loader',
+						options: {
+							minimize: true,
+							sourceMap: debug,
+						},
+					},
+				}),
 			},
 			{
 				test: /.(ttf|otf|eot|woff(2)?)(\?[a-z0-9]+)?$/,
